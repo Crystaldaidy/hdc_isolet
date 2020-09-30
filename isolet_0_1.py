@@ -2,7 +2,7 @@ import numpy as np
 import heterocl as hcl
 import pickle
 
-source = '/home/dnd29/hyperdimensional-computing/dataset/isolet/isolet.pkl'
+source = 'isolet.pkl'
 with open(source, 'rb') as f:
     isolet = pickle.load(f)
 trainData, trainLabels, testData, testLabels = isolet
