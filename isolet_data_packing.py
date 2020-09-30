@@ -3,9 +3,9 @@ import heterocl as hcl
 import pickle
 
 
-source = 'isolet.pkl'
-with open(source, 'rb') as f:
+with open('isolet.pkl', 'rb') as f:
     isolet = pickle.load(f)
+    
 trainData, trainLabels, testData, testLabels = isolet
 trainLabels = np.array(trainLabels)
 testLabels = np.array(testLabels)
