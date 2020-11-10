@@ -12,18 +12,20 @@ testLabels = np.array(testLabels)
 
 numClasses = 26
 quantLevels = 100
-dim = 10000
+bw = 64
 
-hdTrainData = np.load("hdTrainData.npy")
-hdTestData = np.load("hdTestData.npy")
+# hdTrainData = np.load("hdTrainData.npy")
+# hdTestData = np.load("hdTestData.npy")
+pack_train = np.load("pack_train.npy")
+pack_test = np.load("pack_test.npy")
 
-def kernel(hdTrainData, trainLabels, hdTestData, testLabels, rdv3, epoch):
+def kernel(pack_train, trainLabels, pack_test, testLabels, rdv3, epoch):
     def learn(k, hdTrainData, prototype, prototypeCounter):
         #Find samples that have the label k
         match = hcl.compute(hdTrainData.shape, 
                         lambda x,y: hcl.select(trainLabels[x] == k, hdTrainData[x][y], 0), "match")
         #Record the number of these samples
-        with hcl.for_(0,hdTrainData.shape[0]) as a:
+        with hcl.for_(0, hdTrainData.shape[0]) as a:
             with hcl.if_(trainLabels[a] == k):
                 max[k] += 1
         #Do hdc sum on these samples' hdv
@@ -36,7 +38,7 @@ def kernel(hdTrainData, trainLabels, hdTestData, testLabels, rdv3, epoch):
         with hcl.else_():
             hcl.update(sum1, lambda x: hcl.select(result[x] - max[k]/2 > 0, 1, 0))
         #Push the binary sum to prototype and the original sum to prototypeCounter
-        with hcl.for_(0, dim) as t:
+        with hcl.for_(0, hdTrainData.shape[1]) as t:
             prototype[k][t] = sum1[t]
             prototypeCounter[k][t] = result[t]
 
@@ -98,7 +100,7 @@ def kernel(hdTrainData, trainLabels, hdTestData, testLabels, rdv3, epoch):
             with hcl.if_(pred.v != trainLabels[i]):
                 max[trainLabels[i]] += 1
                 max[pred] -= 1
-                with hcl.for_(0, dim) as m:
+                with hcl.for_(0, hdTrainData.shape[1]) as m:
                     prototypeCounter[trainLabels[i]][m] += hdTrainData[i][m]
                     prototypeCounter[pred][m] -= hdTrainData[i][m]
                     with hcl.if_(max[trainLabels[i]] % 2 == 0):
@@ -117,10 +119,14 @@ def kernel(hdTrainData, trainLabels, hdTestData, testLabels, rdv3, epoch):
         hcl.mutate((1,), lambda x: test_hdc_accu(prototype, hdTrainData, trainLabels, 1), 'training_update')
         hcl.mutate((1,), lambda x: test_hdc_accu(prototype, hdTestData, testLabels, 2), 'testing_update')
 
+    ###unpack
+    hdTrainData = hcl.unpack(pack_train, axis=1, dtype=hcl.UInt(1), name="hdTrainData")
+    hdTestData = hcl.unpack(pack_test, axis=1, dtype=hcl.UInt(1), name="hdTestData")
+
     ###learn
     hcl.print((),"Learning the prototype HDVs.\n")
-    prototype = hcl.compute((numClasses, dim), lambda x, y: 0, "prototype",)
-    prototypeCounter = hcl.compute((numClasses, dim), lambda x, y: 0, "prototypeCounter") #Every dimension is the sum of the targeted data
+    prototype = hcl.compute((numClasses, hdTrainData.shape[1]), lambda x, y: 0, "prototype",)
+    prototypeCounter = hcl.compute((numClasses, hdTrainData.shape[1]), lambda x, y: 0, "prototypeCounter") #Every dimension is the sum of the targeted data
 
     #max is the number records the added vectors, later for binary voting
     max = hcl.compute((numClasses, ), lambda x: 0)
@@ -135,25 +141,30 @@ def kernel(hdTrainData, trainLabels, hdTestData, testLabels, rdv3, epoch):
 
 hcl.init()
 
-hcl_hdTrainData = hcl.placeholder((hdTrainData.shape),"hcl_trainData")
+hcl_hdTrainData = hcl.placeholder((pack_train.shape),"hcl_trainData", dtype=hcl.UInt(bw))
 hcl_trainLabels = hcl.placeholder((trainLabels.shape),"hcl_trainLabels")
-hcl_hdTestData = hcl.placeholder((hdTestData.shape),"hcl_testData")
+hcl_hdTestData = hcl.placeholder((pack_test.shape),"hcl_testData", dtype=hcl.UInt(bw))
 hcl_testLabels = hcl.placeholder((testLabels.shape),"hcl_testLabels")
-hcl_rdv3 = hcl.placeholder((numClasses,dim),"hcl_rdv3")
+hcl_rdv3 = hcl.placeholder((numClasses,pack_train.shape[1]*bw),"hcl_rdv3")
 hcl_epoch = hcl.placeholder((1,),"hcl_epoch")
 
 s = hcl.create_schedule([hcl_hdTrainData, hcl_trainLabels, hcl_hdTestData, hcl_testLabels, hcl_rdv3, hcl_epoch], kernel)
+
+target = hcl.platform.zc706
+# target.config(compile="vitis", mode="hw_exe")
+# target.config(compile="vivado_hls", mode="csim|csyn")
+target.config(compile="vivado_hls", mode="csim")
 
 # print(hcl.lower(s))
 f = hcl.build(s)
 
 
 
-_hdTrainData = hcl.asarray(hdTrainData)
+_pack_train = hcl.asarray(pack_train, dtype=hcl.UInt(bw))
 _trainLabels = hcl.asarray(trainLabels)
-_hdTestData = hcl.asarray(hdTestData)
+_pack_test = hcl.asarray(pack_test, dtype=hcl.UInt(bw))
 _testLabels = hcl.asarray(testLabels)
-_rdv3 = hcl.asarray(np.random.choice([0,1], size=(numClasses, dim)))
+_rdv3 = hcl.asarray(np.random.choice([0,1], size=(numClasses, pack_train.shape[1]*bw)))
 _epoch = hcl.asarray([30])
 
-f(_hdTrainData, _trainLabels, _hdTestData, _testLabels, _rdv3, _epoch)
+f(_pack_train, _trainLabels, _pack_test, _testLabels, _rdv3, _epoch)
