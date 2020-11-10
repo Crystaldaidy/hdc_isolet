@@ -55,6 +55,7 @@ numClasses = 26
 quantLevels = 100
 dim = 10000
 isolet = dataset('isolet.pkl')
+bw = 64
 
 start1 = time.time()
 trainData, trainLabels, testData, testLabels, itemMem, idMem = preprocessing(isolet, numClasses, quantLevels, dim)
@@ -84,7 +85,7 @@ def kernel(trainData, testData, itemMem, idMem, rdv1, rdv2):
     preTrainData = hcl.compute((trainData.shape[0], dim), lambda x, y: 0, "preTrainData")
     hcl.mutate((trainData.shape[0], ), lambda x: train_encoding(x, preTrainData))
 
-    hdTrainData = hcl.compute((trainData.shape[0], dim), lambda x, y: 0, "hdTrainData")
+    hdTrainData = hcl.compute((trainData.shape[0], dim), lambda x, y: 0, "hdTrainData", dtype=hcl.UInt(1))
     with hcl.Stage("S1"):
         with hcl.if_(trainData.shape[1] % 2 == 0):
             hcl.print((), "Use the random vector\n")
@@ -96,14 +97,18 @@ def kernel(trainData, testData, itemMem, idMem, rdv1, rdv2):
     preTestData = hcl.compute((testData.shape[0], dim), lambda x, y: 0, "preTestData")
     hcl.mutate((testData.shape[0], ), lambda x: test_encoding(x, preTestData))
 
-    hdTestData = hcl.compute((testData.shape[0], dim), lambda x, y: 0, "hdTestData")
+    hdTestData = hcl.compute((testData.shape[0], dim), lambda x, y: 0, "hdTestData", dtype=hcl.UInt(1))
     with hcl.Stage("S2"):
         with hcl.if_(testData.shape[1] % 2 == 0):
             hcl.print((), "Use the random vector\n")
             hcl.update(hdTestData, lambda x, y: hcl.select(preTestData[x][y] + rdv2[x][y] - testData.shape[1]/2 > 0, 1, 0))
         with hcl.else_():
             hcl.update(hdTestData, lambda x, y: hcl.select(preTestData[x][y] - testData.shape[1]/2 > 0, 1, 0))
-    return hdTrainData, hdTestData
+
+    ###data_packing
+    pack_train = hcl.pack(hdTrainData, axis=1, dtype=hcl.UInt(bw), name="pack_train")
+    pack_test = hcl.pack(hdTestData, axis=1, dtype=hcl.UInt(bw), name="pack_test")
+    return pack_train, pack_test
 
 hcl_trainData = hcl.placeholder((trainData.shape),"hcl_trainData")
 hcl_testData = hcl.placeholder((testData.shape),"hcl_testData")
@@ -116,7 +121,12 @@ s = hcl.create_schedule([hcl_trainData, hcl_testData, hcl_itemMem, hcl_idMem, hc
 
 # print(hcl.lower(s))
 
-f = hcl.build(s)
+target = hcl.platform.zc706
+# target.config(compile="vitis", mode="hw_exe")
+# target.config(compile="vivado_hls", mode="csim|csyn")
+target.config(compile="vivado_hls", mode="csyn")
+
+f = hcl.build(s,target)
 
 _trainData = hcl.asarray(trainData)
 _testData = hcl.asarray(testData)
@@ -124,15 +134,16 @@ _itemMem = hcl.asarray(itemMem)
 _idMem = hcl.asarray(idMem)
 _rdv1 = hcl.asarray(np.random.choice([0,1], size=(trainData.shape[0], dim)))
 _rdv2 = hcl.asarray(np.random.choice([0,1], size=(testData.shape[0], dim)))
-_hdTrainData = hcl.asarray(np.zeros([trainData.shape[0], dim]))
-_hdTestData = hcl.asarray(np.zeros([testData.shape[0], dim]))
+_pack_train = hcl.asarray(np.zeros([trainData.shape[0], dim//bw]), dtype=hcl.UInt(bw))
+_pack_test = hcl.asarray(np.zeros([testData.shape[0], dim//bw]), dtype=hcl.UInt(bw))
+
 
 start = time.time()
-f(_trainData, _testData, _itemMem, _idMem, _rdv1, _rdv2, _hdTrainData, _hdTestData)
+f(_trainData, _testData, _itemMem, _idMem, _rdv1, _rdv2, _pack_train, _pack_test)
 end = time.time()
 
 time = end - start + end1 - start1
 print("Encoding time in heterocl:",time)
 
-np.save("hdTrainData", _hdTrainData.asnumpy())
-np.save("hdTestData", _hdTestData.asnumpy())
+np.save("pack_train.npy", _pack_train.asnumpy())
+np.save("pack_test.npy", _pack_test.asnumpy())
