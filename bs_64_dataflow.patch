@@ -1,0 +1,132 @@
+diff --git a/HLSC_datapacking_64_bs.cpp b/HLSC_datapacking_64_bs.cpp
+index 523a881..62b20db 100644
+--- a/HLSC_datapacking_64_bs.cpp
++++ b/HLSC_datapacking_64_bs.cpp
+@@ -8,22 +8,12 @@
+ #include <hls_math.h>
+ #include <math.h>
+ #include <stdint.h>
+-#include "kernel.h"
+-void test(bit32 hcl_rdv3[26][9984], bit32 hcl_trainLabels[6238], ap_uint<64> hcl_in_train[6238][156], ap_uint<64> hcl_in_test[1559][156], bit32 hcl_testLabels[1559], bit32 hcl_epoch) {
++
++typedef ap_int<32> bit32;
++typedef ap_int<64> bit64;
++
++void test(bit64 hcl_rdv3[26][9984], bit32 hcl_trainLabels[6238], ap_uint<64> hcl_in_train[6238][156], ap_uint<64> hcl_in_test[1559][156], bit32 hcl_testLabels[1559], bit32 hcl_epoch) {
+     bit32 _top;
+-    ap_uint<64> pack_rdv3[26][4992];
+-    pack_rdv3_indices: for (bit32 indices = 0; indices < 26; ++indices) {
+-      pack_rdv3_temp: for (bit32 temp = 0; temp < 4992; ++temp) {
+-        ap_uint<64> pack_rdv3_temp;
+-        pack_rdv3_temp_x: for (bit32 x = 0; x < 1; ++x) {
+-          pack_rdv3_temp = (ap_uint<64>)0;
+-        }
+-        i: for (bit32 i = 0; i < 2; ++i) {
+-          pack_rdv3_temp(((i * 32) + 31), (i * 32)) = hcl_rdv3[indices][((temp * 2) + i)];
+-        }
+-        pack_rdv3[indices][temp] = pack_rdv3_temp;
+-      }
+-    }
+     ap_uint<64> prototype[26][156];
+     prototype_x1: for (bit32 x1 = 0; x1 < 26; ++x1) {
+       prototype_y: for (bit32 y = 0; y < 156; ++y) {
+@@ -36,27 +26,29 @@ void test(bit32 hcl_rdv3[26][9984], bit32 hcl_trainLabels[6238], ap_uint<64> hcl
+         prototypeCounter[x2][y1] = 0;
+       }
+     }
++
++    bit32 learn;
++    bit32 compute1[26];
++    learn_k: for (bit32 k = 0; k < 26; ++k) {
++      #pragma HLS dataflow
+     bit32 compute0[26];
++    bit32 compute2[26];
+     compute0_x3: for (bit32 x3 = 0; x3 < 26; ++x3) {
+       compute0[x3] = 0;
+     }
+-    bit32 learn;
+-    learn_k: for (bit32 k = 0; k < 26; ++k) {
+       ap_uint<64> match[6238][156];
++      #pragma HLS STREAM variable=match depth=6238
+       match_x4: for (bit32 x4 = 0; x4 < 6238; ++x4) {
+         match_y2: for (bit32 y2 = 0; y2 < 156; ++y2) {
+           if ((hcl_trainLabels[x4] == k)) { 
+             match[x4][y2] = hcl_in_train[x4][y2];
++            compute2[k] = (compute0[k] + 1);
+           } else { 
+             match[x4][y2] = (ap_uint<64>)0;
++            compute2[k] = (compute0[k]);
+           }
+         }
+       }
+-      i1: for (bit32 i1 = 0; i1 < 6238; ++i1) {
+-        if (hcl_trainLabels[i1] == k) {
+-          compute0[k] = (compute0[k] + 1);
+-        }
+-      }
+       i2: for (bit32 i2 = 0; i2 < 64; ++i2) {
+         bit32 result[156];
+         result_y3: for (bit32 y3 = 0; y3 < 156; ++y3) {
+@@ -73,15 +65,17 @@ void test(bit32 hcl_rdv3[26][9984], bit32 hcl_trainLabels[6238], ap_uint<64> hcl
+         sum1_x6: for (bit32 x6 = 0; x6 < 156; ++x6) {
+           sum1[x6] = (ap_uint<1>)0;
+         }
+-        if ((compute0[k] % 2) == 0) {
++        bit32 compute1_temp = compute2[k];
++        compute1[k] = compute1_temp;
++        if (( compute1_temp % 2) == 0) {
+           bit32 update0;
+           update0_x7: for (bit32 x7 = 0; x7 < 156; ++x7) {
+-            sum1[x7] = ((ap_uint<1>)(((ap_int<67>)0 < (((ap_int<67>)(((ap_int<66>)result[x7]) + ((ap_int<66>)pack_rdv3[k][x7][i2]))) - ((ap_int<67>)(compute0[k] / 2)))) ? ((bit32)1) : ((bit32)0)));
++            sum1[x7] = ((ap_uint<1>)(((ap_int<67>)0 < (((ap_int<67>)(((ap_int<66>)result[x7]) + ((ap_int<66>)hcl_rdv3[k][x7][i2]))) - ((ap_int<67>)(compute1_temp / 2)))) ? ((bit32)1) : ((bit32)0)));
+           }
+         } else {
+           bit32 update1;
+           update1_x8: for (bit32 x8 = 0; x8 < 156; ++x8) {
+-            sum1[x8] = ((ap_uint<1>)(((ap_int<33>)0 < (((ap_int<33>)result[x8]) - ((ap_int<33>)(compute0[k] / 2)))) ? ((bit32)1) : ((bit32)0)));
++            sum1[x8] = ((ap_uint<1>)(((ap_int<33>)0 < (((ap_int<33>)result[x8]) - ((ap_int<33>)(compute1_temp / 2)))) ? ((bit32)1) : ((bit32)0)));
+           }
+         }
+         i3: for (bit32 i3 = 0; i3 < 156; ++i3) {
+@@ -90,6 +84,7 @@ void test(bit32 hcl_rdv3[26][9984], bit32 hcl_trainLabels[6238], ap_uint<64> hcl
+         }
+       }
+     }
++
+     bit32 test_train_accu;
+     test_train_accu_x9: for (bit32 x9 = 0; x9 < 1; ++x9) {
+       ap_uint<64> distance1[156];
+@@ -287,25 +282,25 @@ void test(bit32 hcl_rdv3[26][9984], bit32 hcl_trainLabels[6238], ap_uint<64> hcl
+           }
+         }
+         if (pred != hcl_trainLabels[i10]) {
+-          compute0[hcl_trainLabels[i10]] = (compute0[hcl_trainLabels[i10]] + 1);
+-          compute0[pred] = (compute0[pred] + -1);
++          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
++          compute1[pred] = (compute1[pred] + -1);
+           i13: for (bit32 i13 = 0; i13 < 156; ++i13) {
+             i14: for (bit32 i14 = 0; i14 < 64; ++i14) {
+               prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)] = ((bit32)(((ap_int<66>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) + ((ap_int<66>)hcl_in_train[i10][i13][i14])));
+               prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)] = ((bit32)(((ap_int<66>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) - ((ap_int<66>)hcl_in_train[i10][i13][i14])));
+-              if ((compute0[hcl_trainLabels[i10]] % 2) == 0) {
+-                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute0[hcl_trainLabels[i10]] / 2))) {
++              if ((compute1[hcl_trainLabels[i10]] % 2) == 0) {
++                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute1[hcl_trainLabels[i10]] / 2))) {
+                   prototype[hcl_trainLabels[i10]][i13][i14] = (prototype[hcl_trainLabels[i10]][i13][i14] % (ap_uint<64>)2);
+                 }
+               } else {
+-                prototype[hcl_trainLabels[i10]][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute0[hcl_trainLabels[i10]] / 2)))) ? ((bit32)1) : ((bit32)0));
++                prototype[hcl_trainLabels[i10]][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute1[hcl_trainLabels[i10]] / 2)))) ? ((bit32)1) : ((bit32)0));
+               }
+-              if ((compute0[pred] % 2) == 0) {
+-                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute0[pred] / 2))) {
++              if ((compute1[pred] % 2) == 0) {
++                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute1[pred] / 2))) {
+                   prototype[pred][i13][i14] = (prototype[pred][i13][i14] % (ap_uint<64>)2);
+                 }
+               } else {
+-                prototype[pred][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute0[pred] / 2)))) ? ((bit32)1) : ((bit32)0));
++                prototype[pred][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute1[pred] / 2)))) ? ((bit32)1) : ((bit32)0));
+               }
+             }
+           }
