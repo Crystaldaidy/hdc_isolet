@@ -1,0 +1,341 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLSC_DDY.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLSC_DDY.cpp:39:2
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLSC_DDY.cpp:50:7
+WARNING: [HLS 200-471] Dataflow form checks found 2 issue(s) in file HLSC_DDY.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:54 ; elapsed = 00:00:59 . Memory (MB): peak = 1057.312 ; gain = 527.219 ; free physical = 101266 ; free virtual = 120030
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:54 ; elapsed = 00:00:59 . Memory (MB): peak = 1057.312 ; gain = 527.219 ; free physical = 101266 ; free virtual = 120030
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 1058.633 ; gain = 528.539 ; free physical = 101200 ; free virtual = 119997
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] HLSC_DDY.cpp:58: variable-indexed range selection may cause suboptimal QoR.
+WARNING: [SYNCHK 200-77] The top function 'test' (HLSC_DDY.cpp:15) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops.
+INFO: [SYNCHK 200-10] 0 error(s), 2 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:56 ; elapsed = 00:01:02 . Memory (MB): peak = 1058.633 ; gain = 528.539 ; free physical = 101184 ; free virtual = 119984
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x5' (HLSC_DDY.cpp:54) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'test_train_accu_x9' (HLSC_DDY.cpp:87) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x16' (HLSC_DDY.cpp:113) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x17' (HLSC_DDY.cpp:117) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x18' (HLSC_DDY.cpp:127) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x19' (HLSC_DDY.cpp:136) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'test_test_accu_x22' (HLSC_DDY.cpp:158) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x29' (HLSC_DDY.cpp:184) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x30' (HLSC_DDY.cpp:188) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x31' (HLSC_DDY.cpp:198) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x32' (HLSC_DDY.cpp:207) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x41' (HLSC_DDY.cpp:251) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x42' (HLSC_DDY.cpp:255) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x43' (HLSC_DDY.cpp:265) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred_x44' (HLSC_DDY.cpp:274) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'training_update_x45' (HLSC_DDY.cpp:308) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x52' (HLSC_DDY.cpp:334) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x53' (HLSC_DDY.cpp:338) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x54' (HLSC_DDY.cpp:348) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x55' (HLSC_DDY.cpp:357) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'testing_update_x58' (HLSC_DDY.cpp:379) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x65' (HLSC_DDY.cpp:405) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x66' (HLSC_DDY.cpp:409) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x67' (HLSC_DDY.cpp:419) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x68' (HLSC_DDY.cpp:428) in function 'test' automatically.
+INFO: [HLS 200-489] Unrolling loop 'sum_x5' (HLSC_DDY.cpp:54) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'test_train_accu_x9' (HLSC_DDY.cpp:87) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x16' (HLSC_DDY.cpp:113) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x17' (HLSC_DDY.cpp:117) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x18' (HLSC_DDY.cpp:127) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x19' (HLSC_DDY.cpp:136) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'test_test_accu_x22' (HLSC_DDY.cpp:158) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x29' (HLSC_DDY.cpp:184) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x30' (HLSC_DDY.cpp:188) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x31' (HLSC_DDY.cpp:198) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x32' (HLSC_DDY.cpp:207) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x41' (HLSC_DDY.cpp:251) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x42' (HLSC_DDY.cpp:255) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x43' (HLSC_DDY.cpp:265) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred_x44' (HLSC_DDY.cpp:274) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'training_update_x45' (HLSC_DDY.cpp:308) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x52' (HLSC_DDY.cpp:334) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x53' (HLSC_DDY.cpp:338) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x54' (HLSC_DDY.cpp:348) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x55' (HLSC_DDY.cpp:357) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'testing_update_x58' (HLSC_DDY.cpp:379) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x65' (HLSC_DDY.cpp:405) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x66' (HLSC_DDY.cpp:409) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x67' (HLSC_DDY.cpp:419) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x68' (HLSC_DDY.cpp:428) in function 'test' completely with a factor of 1.
+INFO: [XFORM 203-721] Changing loop 'match_x4' (HLSC_DDY.cpp:39)  to a process function for dataflow in function 'test'.
+INFO: [XFORM 203-721] Changing loop 'i2' (HLSC_DDY.cpp:50)  to a process function for dataflow in function 'test'.
+INFO: [XFORM 203-721] Extract dataflow region from loop learn_k (HLSC_DDY.cpp:32)  of function 'test'.
+WARNING: [XFORM 203-713] All the elements of global array 'compute2.V2' should be updated in process function 'match_x4_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'match3'  should be updated in process function 'match_x4_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'compute1.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'hcl_rdv3.V'  in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'hcl_rdv3.V' has read operations in process function 'i2_proc'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'prototype.V'  in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'prototype.V' has read and write operations in process function 'i2_proc'.
+WARNING: [XFORM 203-713] All the elements of global array 'prototype.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'prototypeCounter.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'dataflow_in_loop_learn_k', detected/extracted 2 process function(s): 
+	 'match_x4_proc'
+	 'i2_proc'.
+WARNING: [XFORM 203-124] Array  'match3' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:01:04 . Memory (MB): peak = 1058.633 ; gain = 528.539 ; free physical = 101135 ; free virtual = 119938
+WARNING: [XFORM 203-631] Renaming function 'dataflow_parent_loop_proc' to 'dataflow_parent_loop.1' (HLSC_DDY.cpp:32:40)
+WARNING: [XFORM 203-631] Renaming function 'dataflow_in_loop_learn_k' to 'dataflow_in_loop_lea' (HLSC_DDY.cpp:33:1)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_DDY.cpp:20:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_DDY.cpp:26:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1.V' (HLSC_DDY.cpp:108:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1.V' (HLSC_DDY.cpp:90:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1_.V' (HLSC_DDY.cpp:179:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1_.V' (HLSC_DDY.cpp:161:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance.V' (HLSC_DDY.cpp:232:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'pre_dist.V' (HLSC_DDY.cpp:236:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'hamming_dist.V' (HLSC_DDY.cpp:240:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance.V' (HLSC_DDY.cpp:246:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'pre_dist.V' (HLSC_DDY.cpp:262:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'hamming_dist.V' (HLSC_DDY.cpp:271:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_DDY.cpp:283:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_DDY.cpp:284:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_DDY.cpp:287)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_DDY.cpp:288)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_DDY.cpp:291:90)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_DDY.cpp:294)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_DDY.cpp:298:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_DDY.cpp:301)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1__.V' (HLSC_DDY.cpp:329:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1__.V' (HLSC_DDY.cpp:311:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1___.V' (HLSC_DDY.cpp:400:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1___.V' (HLSC_DDY.cpp:382:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_DDY.cpp:76:97)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_DDY.cpp:67:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_DDY.cpp:64:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'result.V' (HLSC_DDY.cpp:60:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_DDY.cpp:71:149)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_DDY.cpp:80:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_DDY.cpp:81:229)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:59 ; elapsed = 00:01:06 . Memory (MB): peak = 1058.633 ; gain = 528.539 ; free physical = 101096 ; free virtual = 119902
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'test' ...
+WARNING: [SYN 201-103] Legalizing function name 'dataflow_parent_loop.1' to 'dataflow_parent_loop_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'match_x4_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 65.73 seconds; current allocated memory: 239.002 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 239.201 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'i2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 239.663 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 240.222 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_lea' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 240.296 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 240.433 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 240.520 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 240.603 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 242.362 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.71 seconds; current allocated memory: 244.905 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'match_x4_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'match_x4_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.88 seconds; current allocated memory: 245.469 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'i2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_15ns_5ns_20_1_1' to 'test_mul_mul_15nsbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_15ns_5ns_18_1_1' to 'test_mul_mul_15nscud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_15nsbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_15nscud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'i2_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 246.941 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_lea' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dataflow_in_loop_lea_compute2_V' to 'dataflow_in_loop_dEe' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL data type mismatch (logic vs. lv) for signal 'i2_proc_U0_prototype_V_we0'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_lea'.
+INFO: [HLS 200-111]  Elapsed time: 0.42 seconds; current allocated memory: 249.498 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_parent_loop_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 250.276 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_rdv3_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_trainLabels_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_in_train_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_in_test_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_testLabels_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_epoch_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'test' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'test_prototypeCounter_V' to 'test_prototypeCoueOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_srem_34s_15ns_19_38_seq_1' to 'test_srem_34s_15nfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_9ns_13s_13_1_1' to 'test_mul_mul_9ns_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mac_muladd_19s_15ns_19ns_19_1_1' to 'test_mac_muladd_1hbi' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'test_mac_muladd_1hbi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_9ns_g8j': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'test_srem_34s_15nfYi': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'test'.
+INFO: [HLS 200-111]  Elapsed time: 0.61 seconds; current allocated memory: 254.573 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 116.29 MHz
+INFO: [RTMG 210-278] Implementing memory 'i2_proc_result_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'i2_proc_sum1_V_ram (RAM)' using distributed RAMs.
+WARNING: [RTMG 210-274]==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLSC_DDY.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from HLSC_DDY.cpp:1:
+HLSC_DDY.cpp:282:11: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
+          ^~~~~~~~
+          compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:282:45: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
+                                            ^~~~~~~~
+                                            compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:283:11: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[pred] = (compute1[pred] + -1);
+          ^~~~~~~~
+          compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:283:29: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[pred] = (compute1[pred] + -1);
+                            ^~~~~~~~
+                            compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:288:20: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+              if ((compute1[hcl_trainLabels[i10]] % 2) == 0) {
+                   ^~~~~~~~
+                   compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:289:303: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute1[hcl_trainLabels[i10]] / 2))) {
+                                                                                                                                                                                                                                                                                                              ^~~~~~~~
+                                                                                                                                                                                                                                                                                                              compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:293:361: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                prototype[hcl_trainLabels[i10]][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute1[hcl_trainLabels[i10]] / 2)))) ? ((bit32)1) : ((bit32)0));
+                                                                                                                                                                                                                                                                                                                                                                        ^~~~~~~~
+                                                                                                                                                                                                                                                                                                                                                                        compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:295:20: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+              if ((compute1[pred] % 2) == 0) {
+                   ^~~~~~~~
+                   compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:296:271: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute1[pred] / 2))) {
+                                                                                                                                                                                                                                                                              ^~~~~~~~
+                                                                                                                                                                                                                                                                              compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:300:313: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                prototype[pred][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute1[pred] / 2)))) ? ((bit32)1) : ((bit32)0));
+                                                                                                                                                                                                                                                                                                                        ^~~~~~~~
+                                                                                                                                                                                                                                                                                                                        compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+10 errors generated.

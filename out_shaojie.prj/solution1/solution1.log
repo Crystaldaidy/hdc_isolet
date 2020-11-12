@@ -1,0 +1,245 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLSC_datapacking_64_bs.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLSC_datapacking_64_bs.cpp:36:5
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLSC_datapacking_64_bs.cpp:41:2
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLSC_datapacking_64_bs.cpp:52:7
+WARNING: [HLS 200-471] Dataflow form checks found 3 issue(s) in file HLSC_datapacking_64_bs.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1057.312 ; gain = 527.219 ; free physical = 110176 ; free virtual = 126025
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1057.312 ; gain = 527.219 ; free physical = 110176 ; free virtual = 126026
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 1121.312 ; gain = 591.219 ; free physical = 110087 ; free virtual = 125942
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] HLSC_datapacking_64_bs.cpp:60: variable-indexed range selection may cause suboptimal QoR.
+WARNING: [SYNCHK 200-77] The top function 'test' (HLSC_datapacking_64_bs.cpp:15) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops.
+INFO: [SYNCHK 200-10] 0 error(s), 2 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:04 ; elapsed = 00:01:10 . Memory (MB): peak = 1122.590 ; gain = 592.496 ; free physical = 110074 ; free virtual = 125931
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x5' (HLSC_datapacking_64_bs.cpp:56) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'test_train_accu_x9' (HLSC_datapacking_64_bs.cpp:89) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x16' (HLSC_datapacking_64_bs.cpp:115) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x17' (HLSC_datapacking_64_bs.cpp:119) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x18' (HLSC_datapacking_64_bs.cpp:129) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x19' (HLSC_datapacking_64_bs.cpp:138) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'test_test_accu_x22' (HLSC_datapacking_64_bs.cpp:160) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x29' (HLSC_datapacking_64_bs.cpp:186) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x30' (HLSC_datapacking_64_bs.cpp:190) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x31' (HLSC_datapacking_64_bs.cpp:200) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x32' (HLSC_datapacking_64_bs.cpp:209) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x41' (HLSC_datapacking_64_bs.cpp:253) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x42' (HLSC_datapacking_64_bs.cpp:257) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x43' (HLSC_datapacking_64_bs.cpp:267) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred_x44' (HLSC_datapacking_64_bs.cpp:276) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'training_update_x45' (HLSC_datapacking_64_bs.cpp:310) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x52' (HLSC_datapacking_64_bs.cpp:336) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x53' (HLSC_datapacking_64_bs.cpp:340) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x54' (HLSC_datapacking_64_bs.cpp:350) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x55' (HLSC_datapacking_64_bs.cpp:359) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'testing_update_x58' (HLSC_datapacking_64_bs.cpp:381) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x65' (HLSC_datapacking_64_bs.cpp:407) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x66' (HLSC_datapacking_64_bs.cpp:411) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x67' (HLSC_datapacking_64_bs.cpp:421) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x68' (HLSC_datapacking_64_bs.cpp:430) in function 'test' automatically.
+INFO: [HLS 200-489] Unrolling loop 'sum_x5' (HLSC_datapacking_64_bs.cpp:56) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'test_train_accu_x9' (HLSC_datapacking_64_bs.cpp:89) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x16' (HLSC_datapacking_64_bs.cpp:115) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x17' (HLSC_datapacking_64_bs.cpp:119) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x18' (HLSC_datapacking_64_bs.cpp:129) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x19' (HLSC_datapacking_64_bs.cpp:138) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'test_test_accu_x22' (HLSC_datapacking_64_bs.cpp:160) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x29' (HLSC_datapacking_64_bs.cpp:186) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x30' (HLSC_datapacking_64_bs.cpp:190) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x31' (HLSC_datapacking_64_bs.cpp:200) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x32' (HLSC_datapacking_64_bs.cpp:209) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x41' (HLSC_datapacking_64_bs.cpp:253) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x42' (HLSC_datapacking_64_bs.cpp:257) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x43' (HLSC_datapacking_64_bs.cpp:267) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred_x44' (HLSC_datapacking_64_bs.cpp:276) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'training_update_x45' (HLSC_datapacking_64_bs.cpp:310) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x52' (HLSC_datapacking_64_bs.cpp:336) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x53' (HLSC_datapacking_64_bs.cpp:340) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x54' (HLSC_datapacking_64_bs.cpp:350) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x55' (HLSC_datapacking_64_bs.cpp:359) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'testing_update_x58' (HLSC_datapacking_64_bs.cpp:381) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x65' (HLSC_datapacking_64_bs.cpp:407) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x66' (HLSC_datapacking_64_bs.cpp:411) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x67' (HLSC_datapacking_64_bs.cpp:421) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x68' (HLSC_datapacking_64_bs.cpp:430) in function 'test' completely with a factor of 1.
+INFO: [XFORM 203-721] Changing loop 'match_x4' (HLSC_datapacking_64_bs.cpp:41)  to a process function for dataflow in function 'test'.
+INFO: [XFORM 203-721] Changing loop 'i2' (HLSC_datapacking_64_bs.cpp:52)  to a process function for dataflow in function 'test'.
+INFO: [XFORM 203-721] Extract dataflow region from loop learn_k (HLSC_datapacking_64_bs.cpp:32)  of function 'test'.
+WARNING: [XFORM 203-713] All the elements of global array 'compute2.V1' should be updated in process function 'match_x4_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'match2'  should be updated in process function 'match_x4_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'compute1.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'hcl_rdv3.V'  in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'hcl_rdv3.V' has read operations in process function 'i2_proc'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'prototype.V'  in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'prototype.V' has read and write operations in process function 'i2_proc'.
+WARNING: [XFORM 203-713] All the elements of global array 'prototype.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'prototypeCounter.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'dataflow_in_loop_learn_k', detected/extracted 2 process function(s): 
+	 'match_x4_proc'
+	 'i2_proc'.
+WARNING: [XFORM 203-124] Array  'match2' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:11 ; elapsed = 00:01:17 . Memory (MB): peak = 1185.312 ; gain = 655.219 ; free physical = 110022 ; free virtual = 125883
+WARNING: [XFORM 203-631] Renaming function 'dataflow_parent_loop_proc' to 'dataflow_parent_loop.1' (HLSC_datapacking_64_bs.cpp:32:40)
+WARNING: [XFORM 203-631] Renaming function 'dataflow_in_loop_learn_k' to 'dataflow_in_loop_lea' (HLSC_datapacking_64_bs.cpp:33:1)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:20:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_datapacking_64_bs.cpp:26:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1.V' (HLSC_datapacking_64_bs.cpp:110:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1.V' (HLSC_datapacking_64_bs.cpp:92:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1_.V' (HLSC_datapacking_64_bs.cpp:181:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1_.V' (HLSC_datapacking_64_bs.cpp:163:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance.V' (HLSC_datapacking_64_bs.cpp:234:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'pre_dist.V' (HLSC_datapacking_64_bs.cpp:238:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'hamming_dist.V' (HLSC_datapacking_64_bs.cpp:242:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance.V' (HLSC_datapacking_64_bs.cpp:248:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'pre_dist.V' (HLSC_datapacking_64_bs.cpp:264:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'hamming_dist.V' (HLSC_datapacking_64_bs.cpp:273:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_datapacking_64_bs.cpp:285:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_datapacking_64_bs.cpp:286:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_datapacking_64_bs.cpp:289)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_datapacking_64_bs.cpp:290)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:293:90)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:296)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:300:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:303)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1__.V' (HLSC_datapacking_64_bs.cpp:331:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1__.V' (HLSC_datapacking_64_bs.cpp:313:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1___.V' (HLSC_datapacking_64_bs.cpp:402:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1___.V' (HLSC_datapacking_64_bs.cpp:384:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute2.V1' (HLSC_datapacking_64_bs.cpp:45:37)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_datapacking_64_bs.cpp:78:97)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_datapacking_64_bs.cpp:69:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_datapacking_64_bs.cpp:66:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'result.V' (HLSC_datapacking_64_bs.cpp:62:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_datapacking_64_bs.cpp:73:149)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:82:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_datapacking_64_bs.cpp:83:229)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:14 ; elapsed = 00:01:20 . Memory (MB): peak = 1185.312 ; gain = 655.219 ; free physical = 109987 ; free virtual = 125850
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'test' ...
+WARNING: [SYN 201-103] Legalizing function name 'dataflow_parent_loop.1' to 'dataflow_parent_loop_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'match_x4_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 80.2 seconds; current allocated memory: 289.123 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 289.346 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'i2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 289.771 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 290.285 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_lea' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 290.359 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 290.498 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 290.586 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 290.668 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 292.478 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.71 seconds; current allocated memory: 295.020 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'match_x4_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'match_x4_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.85 seconds; current allocated memory: 295.554 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'i2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_5ns_15ns_20_1_1' to 'test_mul_mul_5ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_5ns_15ns_18_1_1' to 'test_mul_mul_5ns_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_5ns_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_5ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'i2_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 297.070 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_lea' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dataflow_in_loop_lea_compute2_V' to 'dataflow_in_loop_dEe' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL data type mismatch (logic vs. lv) for signal 'i2_proc_U0_prototype_V_we0'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_lea'.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 299.465 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_parent_loop_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 300.276 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_rdv3_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_trainLabels_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_in_train_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_in_test_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_testLabels_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_epoch_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'test' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'test_prototypeCounter_V' to 'test_prototypeCoueOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_srem_34s_15ns_19_38_seq_1' to 'test_srem_34s_15nfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_9ns_13s_13_1_1' to 'test_mul_mul_9ns_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mac_muladd_19s_15ns_19ns_19_1_1' to 'test_mac_muladd_1hbi' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.

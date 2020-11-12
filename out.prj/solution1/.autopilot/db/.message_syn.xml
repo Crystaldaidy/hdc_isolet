@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;HLSC_DDY.cpp&apos; ..."/>
+	<Message severity="ERROR" prefix="[HLS 200-70]" key="HLS_70_1454" tag="" content="Compilation errors found: In file included from HLSC_DDY.cpp:1:
+HLSC_DDY.cpp:282:11: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
+          ^~~~~~~~
+          compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:282:45: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
+                                            ^~~~~~~~
+                                            compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:283:11: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+          compute1[pred] = (compute1[pred] + -1);
+          ^~~~~~~~
+          compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:283:29: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+          compute1[pred] = (compute1[pred] + -1);
+                            ^~~~~~~~
+                            compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:288:20: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+              if ((compute1[hcl_trainLabels[i10]] % 2) == 0) {
+                   ^~~~~~~~
+                   compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:289:303: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+                if (((ap_int&lt;33&gt;)prototypeCounter[(((((ap_int&lt;33&gt;)(i13 * 64)) + ((ap_int&lt;33&gt;)i14)) + ((ap_int&lt;33&gt;)(hcl_trainLabels[i10] * 9984))) / (ap_int&lt;33&gt;)9984)][(((((ap_int&lt;33&gt;)(i13 * 64)) + ((ap_int&lt;33&gt;)i14)) + ((ap_int&lt;33&gt;)(hcl_trainLabels[i10] * 9984))) % (ap_int&lt;33&gt;)9984)]) == ((ap_int&lt;33&gt;)(compute1[hcl_trainLabels[i10]] / 2))) {
+                                                                                                                                                                                                                                                                                                              ^~~~~~~~
+                                                                                                                                                                                                                                                                                                              compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:293:361: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+                prototype[hcl_trainLabels[i10]][i13][i14] = (((ap_int&lt;33&gt;)0 &lt; (((ap_int&lt;33&gt;)prototypeCounter[(((((ap_int&lt;33&gt;)(i13 * 64)) + ((ap_int&lt;33&gt;)i14)) + ((ap_int&lt;33&gt;)(hcl_trainLabels[i10] * 9984))) / (ap_int&lt;33&gt;)9984)][(((((ap_int&lt;33&gt;)(i13 * 64)) + ((ap_int&lt;33&gt;)i14)) + ((ap_int&lt;33&gt;)(hcl_trainLabels[i10] * 9984))) % (ap_int&lt;33&gt;)9984)]) - ((ap_int&lt;33&gt;)(compute1[hcl_trainLabels[i10]] / 2)))) ? ((bit32)1) : ((bit32)0));
+                                                                                                                                                                                                                                                                                                                                                                        ^~~~~~~~
+                                                                                                                                                                                                                                                                                                                                                                        compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:295:20: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+              if ((compute1[pred] % 2) == 0) {
+                   ^~~~~~~~
+                   compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:296:271: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+                if (((ap_int&lt;33&gt;)prototypeCounter[(((((ap_int&lt;33&gt;)(i13 * 64)) + ((ap_int&lt;33&gt;)i14)) + ((ap_int&lt;33&gt;)(pred * 9984))) / (ap_int&lt;33&gt;)9984)][(((((ap_int&lt;33&gt;)(i13 * 64)) + ((ap_int&lt;33&gt;)i14)) + ((ap_int&lt;33&gt;)(pred * 9984))) % (ap_int&lt;33&gt;)9984)]) == ((ap_int&lt;33&gt;)(compute1[pred] / 2))) {
+                                                                                                                                                                                                                                                                              ^~~~~~~~
+                                                                                                                                                                                                                                                                              compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:300:313: error: use of undeclared identifier &apos;compute1&apos;; did you mean &apos;compute0&apos;?
+                prototype[pred][i13][i14] = (((ap_int&lt;33&gt;)0 &lt; (((ap_int&lt;33&gt;)prototypeCounter[(((((ap_int&lt;33&gt;)(i13 * 64)) + ((ap_int&lt;33&gt;)i14)) + ((ap_int&lt;33&gt;)(pred * 9984))) / (ap_int&lt;33&gt;)9984)][(((((ap_int&lt;33&gt;)(i13 * 64)) + ((ap_int&lt;33&gt;)i14)) + ((ap_int&lt;33&gt;)(pred * 9984))) % (ap_int&lt;33&gt;)9984)]) - ((ap_int&lt;33&gt;)(compute1[pred] / 2)))) ? ((bit32)1) : ((bit32)0));
+                                                                                                                                                                                                                                                                                                                        ^~~~~~~~
+                                                                                                                                                                                                                                                                                                                        compute0
+HLSC_DDY.cpp:31:11: note: &apos;compute0&apos; declared here
+    bit32 compute0[26];
+          ^
+10 errors generated."/>
+</Messages>

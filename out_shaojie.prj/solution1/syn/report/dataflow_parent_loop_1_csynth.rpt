@@ -1,0 +1,203 @@
+
+
+================================================================
+== Vivado HLS Report for 'dataflow_parent_loop_1'
+================================================================
+* Date:           Wed Nov 11 09:19:19 2020
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        out.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 7.747 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +------------+------------+------------+------------+------------+------------+---------+
+    |     Latency (cycles)    |    Latency (absolute)   |         Interval        | Pipeline|
+    |     min    |     max    |     min    |     max    |     min    |     max    |   Type  |
+    +------------+------------+------------+------------+------------+------------+---------+
+    |  1624042341|  1625988597| 16.240 sec | 16.260 sec |  1624042341|  1625988597|   none  |
+    +------------+------------+------------+------------+------------+------------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+----------------------+----------+----------+-----------+-----------+----------+----------+----------+
+        |                         |                      |   Latency (cycles)  |   Latency (absolute)  |       Interval      | Pipeline |
+        |         Instance        |        Module        |    min   |    max   |    min    |    max    |    min   |    max   |   Type   |
+        +-------------------------+----------------------+----------+----------+-----------+-----------+----------+----------+----------+
+        |dataflow_in_loop_lea_U0  |dataflow_in_loop_lea  |  65282264|  67228520| 0.653 sec | 0.672 sec |  62350403|  62350403| dataflow |
+        +-------------------------+----------------------+----------+----------+-----------+-----------+----------+----------+----------+
+
+        * Loop: 
+        +-----------+------------+------------+---------------------+-----------+-----------+------+----------+
+        |           |     Latency (cycles)    |      Iteration      |  Initiation Interval  | Trip |          |
+        | Loop Name |     min    |     max    |       Latency       |  achieved |   target  | Count| Pipelined|
+        +-----------+------------+------------+---------------------+-----------+-----------+------+----------+
+        |- learn_k  |  1624042340|  1625988596| 65282266 ~ 67228522 |          -|          -|    26|    no    |
+        +-----------+------------+------------+---------------------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     43|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |       33|      2|     547|   1416|    0|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     18|    -|
+|Register         |        -|      -|      10|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |       33|      2|     557|   1477|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |       11|   ~0  |   ~0   |      2|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+-----+------+-----+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF |  LUT | URAM|
+    +-------------------------+----------------------+---------+-------+-----+------+-----+
+    |dataflow_in_loop_lea_U0  |dataflow_in_loop_lea  |       33|      2|  547|  1416|    0|
+    +-------------------------+----------------------+---------+-------+-----+------+-----+
+    |Total                    |                      |       33|      2|  547|  1416|    0|
+    +-------------------------+----------------------+---------+-------+-----+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |        Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |loop_dataflow_input_count   |     +    |      0|  0|  15|           5|           1|
+    |loop_dataflow_output_count  |     +    |      0|  0|  15|           5|           1|
+    |bound_minus_1               |     -    |      0|  0|  13|           4|           1|
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |Total                       |          |      0|  0|  43|          14|           3|
+    +----------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |loop_dataflow_input_count   |   9|          2|    5|         10|
+    |loop_dataflow_output_count  |   9|          2|    5|         10|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       |  18|          4|   10|         20|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+---+----+-----+-----------+
+    |            Name            | FF| LUT| Bits| Const Bits|
+    +----------------------------+---+----+-----+-----------+
+    |loop_dataflow_input_count   |  5|   0|    5|          0|
+    |loop_dataflow_output_count  |  5|   0|    5|          0|
+    +----------------------------+---+----+-----+-----------+
+    |Total                       | 10|   0|   10|          0|
+    +----------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------+-----+-----+------------+------------------------+--------------+
+|          RTL Ports          | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++-----------------------------+-----+-----+------------+------------------------+--------------+
+|hcl_trainLabels_V_address0   | out |   13|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_ce0        | out |    1|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_d0         | out |   32|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_q0         |  in |   32|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_we0        | out |    1|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_address1   | out |   13|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_ce1        | out |    1|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_d1         | out |   32|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_q1         |  in |   32|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_trainLabels_V_we1        | out |    1|  ap_memory |    hcl_trainLabels_V   |     array    |
+|hcl_in_train_V_address0      | out |   20|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_ce0           | out |    1|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_d0            | out |   64|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_q0            |  in |   64|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_we0           | out |    1|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_address1      | out |   20|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_ce1           | out |    1|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_d1            | out |   64|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_q1            |  in |   64|  ap_memory |     hcl_in_train_V     |     array    |
+|hcl_in_train_V_we1           | out |    1|  ap_memory |     hcl_in_train_V     |     array    |
+|compute1_V_address0          | out |    5|  ap_memory |       compute1_V       |     array    |
+|compute1_V_ce0               | out |    1|  ap_memory |       compute1_V       |     array    |
+|compute1_V_d0                | out |   32|  ap_memory |       compute1_V       |     array    |
+|compute1_V_q0                |  in |   32|  ap_memory |       compute1_V       |     array    |
+|compute1_V_we0               | out |    1|  ap_memory |       compute1_V       |     array    |
+|compute1_V_address1          | out |    5|  ap_memory |       compute1_V       |     array    |
+|compute1_V_ce1               | out |    1|  ap_memory |       compute1_V       |     array    |
+|compute1_V_d1                | out |   32|  ap_memory |       compute1_V       |     array    |
+|compute1_V_q1                |  in |   32|  ap_memory |       compute1_V       |     array    |
+|compute1_V_we1               | out |    1|  ap_memory |       compute1_V       |     array    |
+|hcl_rdv3_V_address0          | out |   18|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_ce0               | out |    1|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_d0                | out |   64|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_q0                |  in |   64|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_we0               | out |    1|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_address1          | out |   18|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_ce1               | out |    1|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_d1                | out |   64|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_q1                |  in |   64|  ap_memory |       hcl_rdv3_V       |     array    |
+|hcl_rdv3_V_we1               | out |    1|  ap_memory |       hcl_rdv3_V       |     array    |
+|prototype_V_address0         | out |   12|  ap_memory |       prototype_V      |     array    |
+|prototype_V_ce0              | out |    1|  ap_memory |       prototype_V      |     array    |
+|prototype_V_d0               | out |   64|  ap_memory |       prototype_V      |     array    |
+|prototype_V_q0               |  in |   64|  ap_memory |       prototype_V      |     array    |
+|prototype_V_we0              | out |    1|  ap_memory |       prototype_V      |     array    |
+|prototype_V_address1         | out |   12|  ap_memory |       prototype_V      |     array    |
+|prototype_V_ce1              | out |    1|  ap_memory |       prototype_V      |     array    |
+|prototype_V_d1               | out |   64|  ap_memory |       prototype_V      |     array    |
+|prototype_V_q1               |  in |   64|  ap_memory |       prototype_V      |     array    |
+|prototype_V_we1              | out |    1|  ap_memory |       prototype_V      |     array    |
+|prototypeCounter_V_address0  | out |   18|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_ce0       | out |    1|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_d0        | out |   32|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_q0        |  in |   32|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_we0       | out |    1|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_address1  | out |   18|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_ce1       | out |    1|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_d1        | out |   32|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_q1        |  in |   32|  ap_memory |   prototypeCounter_V   |     array    |
+|prototypeCounter_V_we1       | out |    1|  ap_memory |   prototypeCounter_V   |     array    |
+|ap_clk                       |  in |    1| ap_ctrl_hs | dataflow_parent_loop.1 | return value |
+|ap_rst                       |  in |    1| ap_ctrl_hs | dataflow_parent_loop.1 | return value |
+|ap_start                     |  in |    1| ap_ctrl_hs | dataflow_parent_loop.1 | return value |
+|ap_done                      | out |    1| ap_ctrl_hs | dataflow_parent_loop.1 | return value |
+|ap_ready                     | out |    1| ap_ctrl_hs | dataflow_parent_loop.1 | return value |
+|ap_idle                      | out |    1| ap_ctrl_hs | dataflow_parent_loop.1 | return value |
+|ap_continue                  |  in |    1| ap_ctrl_hs | dataflow_parent_loop.1 | return value |
++-----------------------------+-----+-----+------------+------------------------+--------------+
+

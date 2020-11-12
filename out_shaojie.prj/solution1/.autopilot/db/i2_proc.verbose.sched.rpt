@@ -1,0 +1,353 @@
+
+
+================================================================
+== Vivado HLS Report for 'i2_proc'
+================================================================
+* Date:           Wed Nov 11 09:19:15 2020
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        out.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 7.747 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +----------+----------+-----------+-----------+----------+----------+---------+
+    |   Latency (cycles)  |   Latency (absolute)  |       Interval      | Pipeline|
+    |    min   |    max   |    min    |    max    |    min   |    max   |   Type  |
+    +----------+----------+-----------+-----------+----------+----------+---------+
+    |  62350402|  62350402| 0.624 sec | 0.624 sec |  62350402|  62350402|   none  |
+    +----------+----------+-----------+-----------+----------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+----------+----------+----------+-----------+-----------+------+----------+
+        |               |   Latency (cycles)  | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name   |    min   |    max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------+----------+----------+----------+-----------+-----------+------+----------+
+        |- i2           |  62350400|  62350400|    974225|          -|          -|    64|    no    |
+        | + result_y3   |    973440|    973440|      6240|          -|          -|   156|    no    |
+        |  ++ result_r  |      6238|      6238|         1|          -|          -|  6238|    no    |
+        | + sum1_x6     |       156|       156|         1|          -|          -|   156|    no    |
+        | + update0_x7  |       312|       312|         2|          -|          -|   156|    no    |
+        | + update1_x8  |       312|       312|         2|          -|          -|   156|    no    |
+        | + i3          |       312|       312|         2|          -|          -|   156|    no    |
+        +---------------+----------+----------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 6 
+5 --> 5 4 
+6 --> 6 7 
+7 --> 8 9 10 
+8 --> 7 
+9 --> 7 
+10 --> 11 3 
+11 --> 10 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.95>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%result_V = alloca [156 x i13], align 2" [HLSC_datapacking_64_bs.cpp:53]   --->   Operation 12 'alloca' 'result_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%sum1_V = alloca [156 x i1], align 1" [HLSC_datapacking_64_bs.cpp:64]   --->   Operation 13 'alloca' 'sum1_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_1 : Operation 14 [1/1] (3.63ns)   --->   "%p_0510_0_read = call i5 @_ssdm_op_Read.ap_fifo.i5P(i5* %p_0510_0)" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 14 'read' 'p_0510_0_read' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 0> <FIFO>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%zext_ln544 = zext i5 %p_0510_0_read to i64" [HLSC_datapacking_64_bs.cpp:45]   --->   Operation 15 'zext' 'zext_ln544' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%compute2_V1_addr = getelementptr [26 x i1]* %compute2_V1, i64 0, i64 %zext_ln544" [HLSC_datapacking_64_bs.cpp:45]   --->   Operation 16 'getelementptr' 'compute2_V1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [2/2] (2.32ns)   --->   "%compute2_V1_load = load i1* %compute2_V1_addr, align 1" [HLSC_datapacking_64_bs.cpp:68]   --->   Operation 17 'load' 'compute2_V1_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%compute1_V_addr = getelementptr [26 x i32]* %compute1_V, i64 0, i64 %zext_ln544" [HLSC_datapacking_64_bs.cpp:69]   --->   Operation 18 'getelementptr' 'compute1_V_addr' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 6.38>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecInterface(i64* %match2, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str151, i32 0, i32 0, [1 x i8]* @p_str152, [1 x i8]* @p_str153, [1 x i8]* @p_str154, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str155, [1 x i8]* @p_str156)"   --->   Operation 19 'specinterface' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%empty_91 = call i32 (...)* @_ssdm_op_SpecInterface(i5* %p_0510_0, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str131, i32 0, i32 0, [1 x i8]* @p_str132, [1 x i8]* @p_str133, [1 x i8]* @p_str134, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str135, [11 x i8]* @ScalarProp_str)"   --->   Operation 20 'specinterface' 'empty_91' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln791 = zext i5 %p_0510_0_read to i13" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 21 'zext' 'zext_ln791' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln791_3 = zext i5 %p_0510_0_read to i20" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 22 'zext' 'zext_ln791_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (6.38ns) (root node of the DSP)   --->   "%mul_ln791 = mul i20 %zext_ln791_3, 9984" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 23 'mul' 'mul_ln791' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 24 [1/1] (4.35ns)   --->   "%mul_ln821 = mul i13 %zext_ln791, 156" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 24 'mul' 'mul_ln821' <Predicate = true> <Delay = 4.35> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/2] (2.32ns)   --->   "%compute2_V1_load = load i1* %compute2_V1_addr, align 1" [HLSC_datapacking_64_bs.cpp:68]   --->   Operation 25 'load' 'compute2_V1_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%compute1_temp_V = zext i1 %compute2_V1_load to i32" [HLSC_datapacking_64_bs.cpp:68]   --->   Operation 26 'zext' 'compute1_temp_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%zext_ln1371 = zext i5 %p_0510_0_read to i18" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 27 'zext' 'zext_ln1371' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (6.38ns) (root node of the DSP)   --->   "%mul_ln1371 = mul i18 %zext_ln1371, 9984" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 28 'mul' 'mul_ln1371' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 29 [1/1] (1.76ns)   --->   "br label %.preheader10348.i.i"   --->   Operation 29 'br' <Predicate = true> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 1.87>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%bvh_d_index = phi i7 [ %i2_V, %i2_end ], [ 0, %entry ]"   --->   Operation 30 'phi' 'bvh_d_index' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%zext_ln887 = zext i7 %bvh_d_index to i32" [HLSC_datapacking_64_bs.cpp:52]   --->   Operation 31 'zext' 'zext_ln887' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (1.48ns)   --->   "%icmp_ln887 = icmp eq i7 %bvh_d_index, -64" [HLSC_datapacking_64_bs.cpp:52]   --->   Operation 32 'icmp' 'icmp_ln887' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%empty_92 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64)"   --->   Operation 33 'speclooptripcount' 'empty_92' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (1.87ns)   --->   "%i2_V = add i7 %bvh_d_index, 1" [HLSC_datapacking_64_bs.cpp:52]   --->   Operation 34 'add' 'i2_V' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887, label %.exit, label %i2_begin" [HLSC_datapacking_64_bs.cpp:52]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([3 x i8]* @p_str9) nounwind" [HLSC_datapacking_64_bs.cpp:52]   --->   Operation 36 'specloopname' <Predicate = (!icmp_ln887)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_5_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([3 x i8]* @p_str9)" [HLSC_datapacking_64_bs.cpp:52]   --->   Operation 37 'specregionbegin' 'tmp_5_i_i' <Predicate = (!icmp_ln887)> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (1.76ns)   --->   "br label %.preheader10347.i.i" [HLSC_datapacking_64_bs.cpp:54]   --->   Operation 38 'br' <Predicate = (!icmp_ln887)> <Delay = 1.76>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 39 'ret' <Predicate = (icmp_ln887)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 1.91>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%p_0688_0_i_i = phi i8 [ %y3_V, %result_y3_end ], [ 0, %i2_begin ]"   --->   Operation 40 'phi' 'p_0688_0_i_i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (1.55ns)   --->   "%icmp_ln887_29 = icmp eq i8 %p_0688_0_i_i, -100" [HLSC_datapacking_64_bs.cpp:54]   --->   Operation 41 'icmp' 'icmp_ln887_29' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%empty_97 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 156, i64 156, i64 156)"   --->   Operation 42 'speclooptripcount' 'empty_97' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (1.91ns)   --->   "%y3_V = add i8 %p_0688_0_i_i, 1" [HLSC_datapacking_64_bs.cpp:54]   --->   Operation 43 'add' 'y3_V' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887_29, label %.preheader10345.i.i.preheader, label %result_y3_begin" [HLSC_datapacking_64_bs.cpp:54]   --->   Operation 44 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str10) nounwind" [HLSC_datapacking_64_bs.cpp:54]   --->   Operation 45 'specloopname' <Predicate = (!icmp_ln887_29)> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_8_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str10)" [HLSC_datapacking_64_bs.cpp:54]   --->   Operation 46 'specregionbegin' 'tmp_8_i_i' <Predicate = (!icmp_ln887_29)> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln544_22 = zext i8 %p_0688_0_i_i to i64" [HLSC_datapacking_64_bs.cpp:60]   --->   Operation 47 'zext' 'zext_ln544_22' <Predicate = (!icmp_ln887_29)> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (1.76ns)   --->   "br label %.preheader10346.i.i" [HLSC_datapacking_64_bs.cpp:59]   --->   Operation 48 'br' <Predicate = (!icmp_ln887_29)> <Delay = 1.76>
+ST_4 : Operation 49 [1/1] (1.76ns)   --->   "br label %.preheader10345.i.i" [HLSC_datapacking_64_bs.cpp:65]   --->   Operation 49 'br' <Predicate = (icmp_ln887_29)> <Delay = 1.76>
+
+State 5 <SV = 4> <Delay = 5.31>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "%p_0757_4_i_i = phi i13 [ %sum_V, %4 ], [ 0, %result_y3_begin ]"   --->   Operation 50 'phi' 'p_0757_4_i_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%p_0652_0_i_i = phi i13 [ %r_V, %4 ], [ 0, %result_y3_begin ]"   --->   Operation 51 'phi' 'p_0652_0_i_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (2.09ns)   --->   "%icmp_ln887_31 = icmp eq i13 %p_0652_0_i_i, -1954" [HLSC_datapacking_64_bs.cpp:59]   --->   Operation 52 'icmp' 'icmp_ln887_31' <Predicate = true> <Delay = 2.09> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%empty_99 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6238, i64 6238, i64 6238)"   --->   Operation 53 'speclooptripcount' 'empty_99' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (1.67ns)   --->   "%r_V = add i13 %p_0652_0_i_i, 1" [HLSC_datapacking_64_bs.cpp:59]   --->   Operation 54 'add' 'r_V' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887_31, label %result_y3_end, label %4" [HLSC_datapacking_64_bs.cpp:59]   --->   Operation 55 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str12) nounwind" [HLSC_datapacking_64_bs.cpp:59]   --->   Operation 56 'specloopname' <Predicate = (!icmp_ln887_31)> <Delay = 0.00>
+ST_5 : Operation 57 [1/1] (3.63ns)   --->   "%p_Val2_s = call i64 @_ssdm_op_Read.ap_fifo.volatile.i64P(i64* %match2)" [HLSC_datapacking_64_bs.cpp:60]   --->   Operation 57 'read' 'p_Val2_s' <Predicate = (!icmp_ln887_31)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 0> <FIFO>
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%p_Result_s = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %p_Val2_s, i32 %zext_ln887)" [HLSC_datapacking_64_bs.cpp:60]   --->   Operation 58 'bitselect' 'p_Result_s' <Predicate = (!icmp_ln887_31)> <Delay = 0.00>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%zext_ln68 = zext i1 %p_Result_s to i13" [HLSC_datapacking_64_bs.cpp:60]   --->   Operation 59 'zext' 'zext_ln68' <Predicate = (!icmp_ln887_31)> <Delay = 0.00>
+ST_5 : Operation 60 [1/1] (1.67ns)   --->   "%sum_V = add i13 %zext_ln68, %p_0757_4_i_i" [HLSC_datapacking_64_bs.cpp:60]   --->   Operation 60 'add' 'sum_V' <Predicate = (!icmp_ln887_31)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "br label %.preheader10346.i.i" [HLSC_datapacking_64_bs.cpp:59]   --->   Operation 61 'br' <Predicate = (!icmp_ln887_31)> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%result_V_addr = getelementptr [156 x i13]* %result_V, i64 0, i64 %zext_ln544_22" [HLSC_datapacking_64_bs.cpp:62]   --->   Operation 62 'getelementptr' 'result_V_addr' <Predicate = (icmp_ln887_31)> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (3.25ns)   --->   "store i13 %p_0757_4_i_i, i13* %result_V_addr, align 2" [HLSC_datapacking_64_bs.cpp:62]   --->   Operation 63 'store' <Predicate = (icmp_ln887_31)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%empty_98 = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str10, i32 %tmp_8_i_i)" [HLSC_datapacking_64_bs.cpp:63]   --->   Operation 64 'specregionend' 'empty_98' <Predicate = (icmp_ln887_31)> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "br label %.preheader10347.i.i" [HLSC_datapacking_64_bs.cpp:54]   --->   Operation 65 'br' <Predicate = (icmp_ln887_31)> <Delay = 0.00>
+
+State 6 <SV = 4> <Delay = 2.32>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%p_0734_0_i_i = phi i8 [ %x6_V, %3 ], [ 0, %.preheader10345.i.i.preheader ]"   --->   Operation 66 'phi' 'p_0734_0_i_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 67 [1/1] (1.55ns)   --->   "%icmp_ln887_30 = icmp eq i8 %p_0734_0_i_i, -100" [HLSC_datapacking_64_bs.cpp:65]   --->   Operation 67 'icmp' 'icmp_ln887_30' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%empty_96 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 156, i64 156, i64 156)"   --->   Operation 68 'speclooptripcount' 'empty_96' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 69 [1/1] (1.91ns)   --->   "%x6_V = add i8 %p_0734_0_i_i, 1" [HLSC_datapacking_64_bs.cpp:65]   --->   Operation 69 'add' 'x6_V' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887_30, label %2, label %3" [HLSC_datapacking_64_bs.cpp:65]   --->   Operation 70 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([8 x i8]* @p_str13) nounwind" [HLSC_datapacking_64_bs.cpp:65]   --->   Operation 71 'specloopname' <Predicate = (!icmp_ln887_30)> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln544_23 = zext i8 %p_0734_0_i_i to i64" [HLSC_datapacking_64_bs.cpp:66]   --->   Operation 72 'zext' 'zext_ln544_23' <Predicate = (!icmp_ln887_30)> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%sum1_V_addr = getelementptr [156 x i1]* %sum1_V, i64 0, i64 %zext_ln544_23" [HLSC_datapacking_64_bs.cpp:66]   --->   Operation 73 'getelementptr' 'sum1_V_addr' <Predicate = (!icmp_ln887_30)> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (2.28ns)   --->   "store i1 false, i1* %sum1_V_addr, align 1" [HLSC_datapacking_64_bs.cpp:66]   --->   Operation 74 'store' <Predicate = (!icmp_ln887_30)> <Delay = 2.28> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "br label %.preheader10345.i.i" [HLSC_datapacking_64_bs.cpp:65]   --->   Operation 75 'br' <Predicate = (!icmp_ln887_30)> <Delay = 0.00>
+ST_6 : Operation 76 [1/1] (2.32ns)   --->   "store i32 %compute1_temp_V, i32* %compute1_V_addr, align 4" [HLSC_datapacking_64_bs.cpp:69]   --->   Operation 76 'store' <Predicate = (icmp_ln887_30)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_6 : Operation 77 [1/1] (0.00ns)   --->   "br i1 %compute2_V1_load, label %.preheader10341.i.i.preheader, label %.preheader10343.i.i.preheader" [HLSC_datapacking_64_bs.cpp:70]   --->   Operation 77 'br' <Predicate = (icmp_ln887_30)> <Delay = 0.00>
+ST_6 : Operation 78 [1/1] (1.76ns)   --->   "br label %.preheader10343.i.i" [HLSC_datapacking_64_bs.cpp:72]   --->   Operation 78 'br' <Predicate = (icmp_ln887_30 & !compute2_V1_load)> <Delay = 1.76>
+ST_6 : Operation 79 [1/1] (1.76ns)   --->   "br label %.preheader10341.i.i" [HLSC_datapacking_64_bs.cpp:77]   --->   Operation 79 'br' <Predicate = (icmp_ln887_30 & compute2_V1_load)> <Delay = 1.76>
+
+State 7 <SV = 5> <Delay = 3.25>
+ST_7 : Operation 80 [1/1] (0.00ns)   --->   "%p_0856_0_i_i = phi i8 [ %x7_V, %5 ], [ 0, %.preheader10343.i.i.preheader ]"   --->   Operation 80 'phi' 'p_0856_0_i_i' <Predicate = (!compute2_V1_load)> <Delay = 0.00>
+ST_7 : Operation 81 [1/1] (1.55ns)   --->   "%icmp_ln887_33 = icmp eq i8 %p_0856_0_i_i, -100" [HLSC_datapacking_64_bs.cpp:72]   --->   Operation 81 'icmp' 'icmp_ln887_33' <Predicate = (!compute2_V1_load)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 82 [1/1] (0.00ns)   --->   "%empty_100 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 156, i64 156, i64 156)"   --->   Operation 82 'speclooptripcount' 'empty_100' <Predicate = (!compute2_V1_load)> <Delay = 0.00>
+ST_7 : Operation 83 [1/1] (1.91ns)   --->   "%x7_V = add i8 %p_0856_0_i_i, 1" [HLSC_datapacking_64_bs.cpp:72]   --->   Operation 83 'add' 'x7_V' <Predicate = (!compute2_V1_load)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 84 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887_33, label %.loopexit10342.i.i.loopexit153, label %5" [HLSC_datapacking_64_bs.cpp:72]   --->   Operation 84 'br' <Predicate = (!compute2_V1_load)> <Delay = 0.00>
+ST_7 : Operation 85 [1/1] (0.00ns)   --->   "%zext_ln544_25 = zext i8 %p_0856_0_i_i to i64" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 85 'zext' 'zext_ln544_25' <Predicate = (!compute2_V1_load & !icmp_ln887_33)> <Delay = 0.00>
+ST_7 : Operation 86 [1/1] (0.00ns)   --->   "%tmp = call i12 @_ssdm_op_PartSelect.i12.i20.i32.i32(i20 %mul_ln791, i32 8, i32 19)" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 86 'partselect' 'tmp' <Predicate = (!compute2_V1_load & !icmp_ln887_33)> <Delay = 0.00>
+ST_7 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_35 = call i20 @_ssdm_op_BitConcatenate.i20.i12.i8(i12 %tmp, i8 %p_0856_0_i_i)" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 87 'bitconcatenate' 'tmp_35' <Predicate = (!compute2_V1_load & !icmp_ln887_33)> <Delay = 0.00>
+ST_7 : Operation 88 [1/1] (0.00ns)   --->   "%zext_ln791_4 = zext i20 %tmp_35 to i64" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 88 'zext' 'zext_ln791_4' <Predicate = (!compute2_V1_load & !icmp_ln887_33)> <Delay = 0.00>
+ST_7 : Operation 89 [1/1] (0.00ns)   --->   "%hcl_rdv3_V_addr = getelementptr [259584 x i64]* %hcl_rdv3_V, i64 0, i64 %zext_ln791_4" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 89 'getelementptr' 'hcl_rdv3_V_addr' <Predicate = (!compute2_V1_load & !icmp_ln887_33)> <Delay = 0.00>
+ST_7 : Operation 90 [1/1] (0.00ns)   --->   "%result_V_addr_2 = getelementptr [156 x i13]* %result_V, i64 0, i64 %zext_ln544_25" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 90 'getelementptr' 'result_V_addr_2' <Predicate = (!compute2_V1_load & !icmp_ln887_33)> <Delay = 0.00>
+ST_7 : Operation 91 [2/2] (3.25ns)   --->   "%result_V_load_1 = load i13* %result_V_addr_2, align 2" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 91 'load' 'result_V_load_1' <Predicate = (!compute2_V1_load & !icmp_ln887_33)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_7 : Operation 92 [2/2] (3.25ns)   --->   "%p_Val2_3 = load i64* %hcl_rdv3_V_addr, align 8" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 92 'load' 'p_Val2_3' <Predicate = (!compute2_V1_load & !icmp_ln887_33)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_7 : Operation 93 [1/1] (0.00ns)   --->   "br label %.loopexit10342.i.i"   --->   Operation 93 'br' <Predicate = (!compute2_V1_load & icmp_ln887_33)> <Delay = 0.00>
+ST_7 : Operation 94 [1/1] (0.00ns)   --->   "%p_0895_0_i_i = phi i8 [ %x8_V, %1 ], [ 0, %.preheader10341.i.i.preheader ]"   --->   Operation 94 'phi' 'p_0895_0_i_i' <Predicate = (compute2_V1_load)> <Delay = 0.00>
+ST_7 : Operation 95 [1/1] (1.55ns)   --->   "%icmp_ln887_32 = icmp eq i8 %p_0895_0_i_i, -100" [HLSC_datapacking_64_bs.cpp:77]   --->   Operation 95 'icmp' 'icmp_ln887_32' <Predicate = (compute2_V1_load)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 96 [1/1] (0.00ns)   --->   "%empty_95 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 156, i64 156, i64 156)"   --->   Operation 96 'speclooptripcount' 'empty_95' <Predicate = (compute2_V1_load)> <Delay = 0.00>
+ST_7 : Operation 97 [1/1] (1.91ns)   --->   "%x8_V = add i8 %p_0895_0_i_i, 1" [HLSC_datapacking_64_bs.cpp:77]   --->   Operation 97 'add' 'x8_V' <Predicate = (compute2_V1_load)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 98 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887_32, label %.loopexit10342.i.i.loopexit, label %1" [HLSC_datapacking_64_bs.cpp:77]   --->   Operation 98 'br' <Predicate = (compute2_V1_load)> <Delay = 0.00>
+ST_7 : Operation 99 [1/1] (0.00ns)   --->   "%zext_ln544_24 = zext i8 %p_0895_0_i_i to i64" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 99 'zext' 'zext_ln544_24' <Predicate = (compute2_V1_load & !icmp_ln887_32)> <Delay = 0.00>
+ST_7 : Operation 100 [1/1] (0.00ns)   --->   "%result_V_addr_1 = getelementptr [156 x i13]* %result_V, i64 0, i64 %zext_ln544_24" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 100 'getelementptr' 'result_V_addr_1' <Predicate = (compute2_V1_load & !icmp_ln887_32)> <Delay = 0.00>
+ST_7 : Operation 101 [2/2] (3.25ns)   --->   "%result_V_load = load i13* %result_V_addr_1, align 2" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 101 'load' 'result_V_load' <Predicate = (compute2_V1_load & !icmp_ln887_32)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_7 : Operation 102 [1/1] (0.00ns)   --->   "br label %.loopexit10342.i.i"   --->   Operation 102 'br' <Predicate = (compute2_V1_load & icmp_ln887_32)> <Delay = 0.00>
+ST_7 : Operation 103 [1/1] (0.00ns)   --->   "%zext_ln81 = zext i7 %bvh_d_index to i14" [HLSC_datapacking_64_bs.cpp:81]   --->   Operation 103 'zext' 'zext_ln81' <Predicate = (compute2_V1_load & icmp_ln887_32) | (!compute2_V1_load & icmp_ln887_33)> <Delay = 0.00>
+ST_7 : Operation 104 [1/1] (1.76ns)   --->   "br label %0" [HLSC_datapacking_64_bs.cpp:81]   --->   Operation 104 'br' <Predicate = (compute2_V1_load & icmp_ln887_32) | (!compute2_V1_load & icmp_ln887_33)> <Delay = 1.76>
+
+State 8 <SV = 6> <Delay = 7.74>
+ST_8 : Operation 105 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str14) nounwind" [HLSC_datapacking_64_bs.cpp:72]   --->   Operation 105 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 106 [1/2] (3.25ns)   --->   "%result_V_load_1 = load i13* %result_V_addr_2, align 2" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 106 'load' 'result_V_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_8 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln887_35)   --->   "%zext_ln786 = zext i13 %result_V_load_1 to i14" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 107 'zext' 'zext_ln786' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 108 [1/2] (3.25ns)   --->   "%p_Val2_3 = load i64* %hcl_rdv3_V_addr, align 8" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 108 'load' 'p_Val2_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_8 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln887_35)   --->   "%p_Result_5 = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %p_Val2_3, i32 %zext_ln887)" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 109 'bitselect' 'p_Result_5' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln887_35)   --->   "%select_ln887 = select i1 %p_Result_5, i14 -1, i14 0" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 110 'select' 'select_ln887' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 111 [1/1] (2.20ns) (out node of the LUT)   --->   "%icmp_ln887_35 = icmp ne i14 %zext_ln786, %select_ln887" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 111 'icmp' 'icmp_ln887_35' <Predicate = true> <Delay = 2.20> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 112 [1/1] (0.00ns)   --->   "%sum1_V_addr_2 = getelementptr [156 x i1]* %sum1_V, i64 0, i64 %zext_ln544_25" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 112 'getelementptr' 'sum1_V_addr_2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 113 [1/1] (2.28ns)   --->   "store i1 %icmp_ln887_35, i1* %sum1_V_addr_2, align 1" [HLSC_datapacking_64_bs.cpp:73]   --->   Operation 113 'store' <Predicate = true> <Delay = 2.28> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_8 : Operation 114 [1/1] (0.00ns)   --->   "br label %.preheader10343.i.i" [HLSC_datapacking_64_bs.cpp:72]   --->   Operation 114 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 6> <Delay = 7.63>
+ST_9 : Operation 115 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str15) nounwind" [HLSC_datapacking_64_bs.cpp:77]   --->   Operation 115 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 116 [1/2] (3.25ns)   --->   "%result_V_load = load i13* %result_V_addr_1, align 2" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 116 'load' 'result_V_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_9 : Operation 117 [1/1] (2.09ns)   --->   "%icmp_ln887_34 = icmp ne i13 %result_V_load, 0" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 117 'icmp' 'icmp_ln887_34' <Predicate = true> <Delay = 2.09> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 118 [1/1] (0.00ns)   --->   "%sum1_V_addr_1 = getelementptr [156 x i1]* %sum1_V, i64 0, i64 %zext_ln544_24" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 118 'getelementptr' 'sum1_V_addr_1' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 119 [1/1] (2.28ns)   --->   "store i1 %icmp_ln887_34, i1* %sum1_V_addr_1, align 1" [HLSC_datapacking_64_bs.cpp:78]   --->   Operation 119 'store' <Predicate = true> <Delay = 2.28> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_9 : Operation 120 [1/1] (0.00ns)   --->   "br label %.preheader10341.i.i" [HLSC_datapacking_64_bs.cpp:77]   --->   Operation 120 'br' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 6> <Delay = 3.94>
+ST_10 : Operation 121 [1/1] (0.00ns)   --->   "%p_0982_0_i_i = phi i8 [ 0, %.loopexit10342.i.i ], [ %i3_V, %6 ]"   --->   Operation 121 'phi' 'p_0982_0_i_i' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 122 [1/1] (1.55ns)   --->   "%icmp_ln887_36 = icmp eq i8 %p_0982_0_i_i, -100" [HLSC_datapacking_64_bs.cpp:81]   --->   Operation 122 'icmp' 'icmp_ln887_36' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 123 [1/1] (0.00ns)   --->   "%empty_94 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 156, i64 156, i64 156)"   --->   Operation 123 'speclooptripcount' 'empty_94' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 124 [1/1] (1.91ns)   --->   "%i3_V = add i8 %p_0982_0_i_i, 1" [HLSC_datapacking_64_bs.cpp:81]   --->   Operation 124 'add' 'i3_V' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 125 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887_36, label %i2_end, label %6" [HLSC_datapacking_64_bs.cpp:81]   --->   Operation 125 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 126 [1/1] (0.00ns)   --->   "%zext_ln544_26 = zext i8 %p_0982_0_i_i to i64" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 126 'zext' 'zext_ln544_26' <Predicate = (!icmp_ln887_36)> <Delay = 0.00>
+ST_10 : Operation 127 [1/1] (0.00ns)   --->   "%zext_ln821 = zext i8 %p_0982_0_i_i to i13" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 127 'zext' 'zext_ln821' <Predicate = (!icmp_ln887_36)> <Delay = 0.00>
+ST_10 : Operation 128 [1/1] (1.67ns)   --->   "%add_ln821 = add i13 %zext_ln821, %mul_ln821" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 128 'add' 'add_ln821' <Predicate = (!icmp_ln887_36)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 129 [1/1] (0.00ns)   --->   "%sum1_V_addr_3 = getelementptr [156 x i1]* %sum1_V, i64 0, i64 %zext_ln544_26" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 129 'getelementptr' 'sum1_V_addr_3' <Predicate = (!icmp_ln887_36)> <Delay = 0.00>
+ST_10 : Operation 130 [2/2] (2.28ns)   --->   "%sum1_V_load = load i1* %sum1_V_addr_3, align 1" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 130 'load' 'sum1_V_load' <Predicate = (!icmp_ln887_36)> <Delay = 2.28> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_10 : Operation 131 [1/1] (0.00ns)   --->   "%tmp_37 = call i4 @_ssdm_op_PartSelect.i4.i7.i32.i32(i7 %bvh_d_index, i32 3, i32 6)" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 131 'partselect' 'tmp_37' <Predicate = (!icmp_ln887_36)> <Delay = 0.00>
+ST_10 : Operation 132 [1/1] (0.00ns)   --->   "%shl_ln = call i14 @_ssdm_op_BitConcatenate.i14.i8.i6(i8 %p_0982_0_i_i, i6 0)" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 132 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln887_36)> <Delay = 0.00>
+ST_10 : Operation 133 [1/1] (1.81ns)   --->   "%ret_V = add i14 %shl_ln, %zext_ln81" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 133 'add' 'ret_V' <Predicate = (!icmp_ln887_36)> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 134 [1/1] (0.00ns)   --->   "%zext_ln215 = zext i14 %ret_V to i18" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 134 'zext' 'zext_ln215' <Predicate = (!icmp_ln887_36)> <Delay = 0.00>
+ST_10 : Operation 135 [1/1] (2.13ns)   --->   "%ret_V_8 = add i18 %mul_ln1371, %zext_ln215" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 135 'add' 'ret_V_8' <Predicate = (!icmp_ln887_36)> <Delay = 2.13> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 136 [1/1] (0.00ns)   --->   "%result_V_addr_3 = getelementptr [156 x i13]* %result_V, i64 0, i64 %zext_ln544_26" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 136 'getelementptr' 'result_V_addr_3' <Predicate = (!icmp_ln887_36)> <Delay = 0.00>
+ST_10 : Operation 137 [2/2] (3.25ns)   --->   "%result_V_load_2 = load i13* %result_V_addr_3, align 2" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 137 'load' 'result_V_load_2' <Predicate = (!icmp_ln887_36)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_10 : Operation 138 [1/1] (0.00ns)   --->   "%empty_93 = call i32 (...)* @_ssdm_op_SpecRegionEnd([3 x i8]* @p_str9, i32 %tmp_5_i_i)" [HLSC_datapacking_64_bs.cpp:85]   --->   Operation 138 'specregionend' 'empty_93' <Predicate = (icmp_ln887_36)> <Delay = 0.00>
+ST_10 : Operation 139 [1/1] (0.00ns)   --->   "br label %.preheader10348.i.i" [HLSC_datapacking_64_bs.cpp:52]   --->   Operation 139 'br' <Predicate = (icmp_ln887_36)> <Delay = 0.00>
+
+State 11 <SV = 7> <Delay = 6.50>
+ST_11 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([3 x i8]* @p_str16) nounwind" [HLSC_datapacking_64_bs.cpp:81]   --->   Operation 140 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 141 [1/1] (0.00ns)   --->   "%sext_ln821 = sext i13 %add_ln821 to i64" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 141 'sext' 'sext_ln821' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 142 [1/1] (0.00ns)   --->   "%prototype_V_addr = getelementptr [4056 x i64]* %prototype_V, i64 0, i64 %sext_ln821" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 142 'getelementptr' 'prototype_V_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 143 [1/2] (2.28ns)   --->   "%sum1_V_load = load i1* %sum1_V_addr_3, align 1" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 143 'load' 'sum1_V_load' <Predicate = true> <Delay = 2.28> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_11 : Operation 144 [1/1] (0.00ns)   --->   "%p_Repl2_s = zext i1 %sum1_V_load to i64" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 144 'zext' 'p_Repl2_s' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 145 [1/1] (0.00ns)   --->   "%tmp_36 = call i64 @_ssdm_op_BitSet.i64.i64.i32.i64(i64 0, i32 %zext_ln887, i64 %p_Repl2_s)" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 145 'bitset' 'tmp_36' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 146 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBRAMWithByteEnable([4056 x i64]* %prototype_V)" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 146 'specbramwithbyteenable' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 147 [1/1] (0.00ns)   --->   "%zext_ln821_8 = zext i4 %tmp_37 to i8" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 147 'zext' 'zext_ln821_8' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 148 [1/1] (2.39ns)   --->   "%shl_ln821 = shl i8 -1, %zext_ln821_8" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 148 'shl' 'shl_ln821' <Predicate = true> <Delay = 2.39> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.39> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 149 [1/1] (3.25ns)   --->   "call void @_ssdm_op_Write.bram.i64(i64* %prototype_V_addr, i64 %tmp_36, i8 %shl_ln821)" [HLSC_datapacking_64_bs.cpp:82]   --->   Operation 149 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_11 : Operation 150 [1/1] (0.00ns)   --->   "%zext_ln180_1 = zext i18 %ret_V_8 to i64" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 150 'zext' 'zext_ln180_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 151 [1/1] (0.00ns)   --->   "%prototypeCounter_V_a = getelementptr [259584 x i32]* %prototypeCounter_V, i64 0, i64 %zext_ln180_1" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 151 'getelementptr' 'prototypeCounter_V_a' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 152 [1/2] (3.25ns)   --->   "%result_V_load_2 = load i13* %result_V_addr_3, align 2" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 152 'load' 'result_V_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_11 : Operation 153 [1/1] (0.00ns)   --->   "%zext_ln180 = zext i13 %result_V_load_2 to i32" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 153 'zext' 'zext_ln180' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 154 [1/1] (3.25ns)   --->   "store i32 %zext_ln180, i32* %prototypeCounter_V_a, align 4" [HLSC_datapacking_64_bs.cpp:83]   --->   Operation 154 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 259584> <RAM>
+ST_11 : Operation 155 [1/1] (0.00ns)   --->   "br label %0" [HLSC_datapacking_64_bs.cpp:81]   --->   Operation 155 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 5.96ns
+The critical path consists of the following:
+	fifo read on port 'p_0510_0' (HLSC_datapacking_64_bs.cpp:78) [12]  (3.63 ns)
+	'getelementptr' operation ('compute2_V1_addr', HLSC_datapacking_64_bs.cpp:45) [18]  (0 ns)
+	'load' operation ('compute2_V1_load', HLSC_datapacking_64_bs.cpp:68) on array 'compute2_V1' [19]  (2.32 ns)
+
+ <State 2>: 6.38ns
+The critical path consists of the following:
+	'mul' operation of DSP[16] ('mul_ln791', HLSC_datapacking_64_bs.cpp:73) [16]  (6.38 ns)
+
+ <State 3>: 1.87ns
+The critical path consists of the following:
+	'phi' operation ('i2.V') with incoming values : ('i2.V', HLSC_datapacking_64_bs.cpp:52) [26]  (0 ns)
+	'add' operation ('i2.V', HLSC_datapacking_64_bs.cpp:52) [30]  (1.87 ns)
+
+ <State 4>: 1.92ns
+The critical path consists of the following:
+	'phi' operation ('y3.V') with incoming values : ('y3.V', HLSC_datapacking_64_bs.cpp:54) [37]  (0 ns)
+	'add' operation ('y3.V', HLSC_datapacking_64_bs.cpp:54) [40]  (1.92 ns)
+
+ <State 5>: 5.31ns
+The critical path consists of the following:
+	fifo read on port 'match2' (HLSC_datapacking_64_bs.cpp:60) [56]  (3.63 ns)
+	'add' operation ('sum.V', HLSC_datapacking_64_bs.cpp:60) [59]  (1.68 ns)
+
+ <State 6>: 2.32ns
+The critical path consists of the following:
+	'store' operation ('store_ln69', HLSC_datapacking_64_bs.cpp:69) of variable 'compute1_temp.V', HLSC_datapacking_64_bs.cpp:68 on array 'compute1_V' [81]  (2.32 ns)
+
+ <State 7>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('x7.V') with incoming values : ('x7.V', HLSC_datapacking_64_bs.cpp:72) [86]  (0 ns)
+	'getelementptr' operation ('result_V_addr_2', HLSC_datapacking_64_bs.cpp:73) [98]  (0 ns)
+	'load' operation ('result_V_load_1', HLSC_datapacking_64_bs.cpp:73) on array 'result.V', HLSC_datapacking_64_bs.cpp:53 [99]  (3.25 ns)
+
+ <State 8>: 7.75ns
+The critical path consists of the following:
+	'load' operation ('result_V_load_1', HLSC_datapacking_64_bs.cpp:73) on array 'result.V', HLSC_datapacking_64_bs.cpp:53 [99]  (3.25 ns)
+	'icmp' operation ('icmp_ln887_35', HLSC_datapacking_64_bs.cpp:73) [104]  (2.21 ns)
+	'store' operation ('store_ln73', HLSC_datapacking_64_bs.cpp:73) of variable 'icmp_ln887_35', HLSC_datapacking_64_bs.cpp:73 on array 'sum1.V', HLSC_datapacking_64_bs.cpp:64 [106]  (2.28 ns)
+
+ <State 9>: 7.64ns
+The critical path consists of the following:
+	'load' operation ('result_V_load', HLSC_datapacking_64_bs.cpp:78) on array 'result.V', HLSC_datapacking_64_bs.cpp:53 [122]  (3.25 ns)
+	'icmp' operation ('icmp_ln887_34', HLSC_datapacking_64_bs.cpp:78) [123]  (2.1 ns)
+	'store' operation ('store_ln78', HLSC_datapacking_64_bs.cpp:78) of variable 'icmp_ln887_34', HLSC_datapacking_64_bs.cpp:78 on array 'sum1.V', HLSC_datapacking_64_bs.cpp:64 [125]  (2.28 ns)
+
+ <State 10>: 3.95ns
+The critical path consists of the following:
+	'phi' operation ('i3.V') with incoming values : ('i3.V', HLSC_datapacking_64_bs.cpp:81) [133]  (0 ns)
+	'add' operation ('ret.V', HLSC_datapacking_64_bs.cpp:83) [155]  (1.81 ns)
+	'add' operation ('ret.V', HLSC_datapacking_64_bs.cpp:83) [157]  (2.14 ns)
+
+ <State 11>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('result_V_load_2', HLSC_datapacking_64_bs.cpp:83) on array 'result.V', HLSC_datapacking_64_bs.cpp:53 [161]  (3.25 ns)
+	'store' operation ('store_ln83', HLSC_datapacking_64_bs.cpp:83) of variable 'zext_ln180', HLSC_datapacking_64_bs.cpp:83 on array 'prototypeCounter_V' [163]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

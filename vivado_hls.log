@@ -1,0 +1,100 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2.1 (64-bit)
+  **** SW Build 2729669 on Thu Dec  5 04:48:12 MST 2019
+  **** IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'dnd29' on host 'en-ec-zhang-x1.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1127.13.1.el7.x86_64) on Wed Nov 11 23:41:12 EST 2020
+INFO: [HLS 200-10] On os "CentOS Linux release 7.8.2003 (Core)"
+INFO: [HLS 200-10] In directory '/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet'
+Sourcing Tcl script 'run.tcl'
+INFO: [HLS 200-10] Opening and resetting project '/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj'.
+INFO: [HLS 200-10] Adding design file 'HLSC_DDY.cpp' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLSC_DDY.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from HLSC_DDY.cpp:1:
+HLSC_DDY.cpp:282:11: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
+          ^~~~~~~~
+          compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:282:45: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
+                                            ^~~~~~~~
+                                            compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:283:11: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[pred] = (compute1[pred] + -1);
+          ^~~~~~~~
+          compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:283:29: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[pred] = (compute1[pred] + -1);
+                            ^~~~~~~~
+                            compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:288:20: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+              if ((compute1[hcl_trainLabels[i10]] % 2) == 0) {
+                   ^~~~~~~~
+                   compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:289:303: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute1[hcl_trainLabels[i10]] / 2))) {
+                                                                                                                                                                                                                                                                                                              ^~~~~~~~
+                                                                                                                                                                                                                                                                                                              compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:293:361: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                prototype[hcl_trainLabels[i10]][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute1[hcl_trainLabels[i10]] / 2)))) ? ((bit32)1) : ((bit32)0));
+                                                                                                                                                                                                                                                                                                                                                                        ^~~~~~~~
+                                                                                                                                                                                                                                                                                                                                                                        compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:295:20: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+              if ((compute1[pred] % 2) == 0) {
+                   ^~~~~~~~
+                   compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:296:271: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute1[pred] / 2))) {
+                                                                                                                                                                                                                                                                              ^~~~~~~~
+                                                                                                                                                                                                                                                                              compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:300:313: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                prototype[pred][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute1[pred] / 2)))) ? ((bit32)1) : ((bit32)0));
+                                                                                                                                                                                                                                                                                                                        ^~~~~~~~
+                                                                                                                                                                                                                                                                                                                        compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+10 errors generated.
+Failed during preprocessing.
+    while executing
+"source run.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $arg] "
+
+INFO: [Common 17-206] Exiting vivado_hls at Wed Nov 11 23:41:32 2020...

@@ -1,0 +1,934 @@
+INFO-FLOW: Workspace /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1 opened at Wed Nov 11 09:17:56 EST 2020
+Execute     set_part xc7z020clg484-1 
+Execute       ap_part_info -name xc7z020clg484-1 -data single -quiet 
+Command       ap_part_info done; 3.64 sec.
+Execute       ap_part_info -name xc7z020clg484-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg484:-1 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source done; 0.12 sec.
+Command         ap_source done; 0.12 sec.
+Execute         ap_part_info -data single -name xc7z020-clg484-1 
+Execute         ap_part_info -name xc7z020-clg484-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Command       add_library done; 0.22 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.98 sec.
+Execute     create_clock -period 10 
+Execute       config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     csynth_design 
+Execute       get_config_compile -dump_cfg 
+Execute       get_config_compile -effort 
+Execute       get_config_compile -enable_clang39 
+Execute       get_config_compile -g 
+Execute       get_config_compile -ng 
+Execute       get_config_compile -opt_fp 
+Execute       get_config_compile -skip_cdt 
+Execute       get_config_compile -skip_syncheck 
+Execute       get_config_compile -skip_transform 
+Execute       get_config_compile -keep_printf 
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute         get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute         get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'HLSC_datapacking_64_bs.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute         is_m_axi_addr64 
+INFO-FLOW: Handling HLSC_datapacking_64_bs.cpp as C++
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         is_encrypted HLSC_datapacking_64_bs.cpp 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute         clang  -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "HLSC_datapacking_64_bs.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot" -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp" 
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E HLSC_datapacking_64_bs.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp
+Command         clang done; 2.14 sec.
+Execute         tidy_31 xilinx-xfmat-array-geometry /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 4.95 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute         clang -syntaxcheck -src /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot" -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp"  -o "/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/useless.bc
+Command         clang done; 4.76 sec.
+INFO-FLOW: Done: GCC PP time: 11.9 seconds per iteration
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute         list_core -type functional_unit 
+Execute         tidy_31 xilinx-systemc-detector /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp std=gnu++98 -directive=/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 4.4 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute         tidy_31 xilinx-directive2pragma /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp std=gnu++98 -directive=/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/all.directive.json -quiet -fix-errors /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 4.33 sec.
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/xilinx-dataflow-lawyer.HLSC_datapacking_64_bs.pp.0.cpp.diag.yml /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/xilinx-dataflow-lawyer.HLSC_datapacking_64_bs.pp.0.cpp.out.log 2> /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/xilinx-dataflow-lawyer.HLSC_datapacking_64_bs.pp.0.cpp.err.log 
+Command         ap_eval done; 4.76 sec.
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLSC_datapacking_64_bs.cpp:36:5
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLSC_datapacking_64_bs.cpp:41:2
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLSC_datapacking_64_bs.cpp:52:7
+Execute         send_msg_by_id WARNING @200-471@%s%s 3 HLSC_datapacking_64_bs.cpp 
+WARNING: [HLS 200-471] Dataflow form checks found 3 issue(s) in file HLSC_datapacking_64_bs.cpp
+Execute         tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp std=gnu++98 
+Execute           ap_eval exec -ignorestderr /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/tidy-3.1.HLSC_datapacking_64_bs.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/tidy-3.1.HLSC_datapacking_64_bs.pp.0.cpp.out.log 2> /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/tidy-3.1.HLSC_datapacking_64_bs.pp.0.cpp.err.log 
+Command           ap_eval done; 8.45 sec.
+Execute           ap_eval exec -ignorestderr /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/xilinx-legacy-rewriter.HLSC_datapacking_64_bs.pp.0.cpp.out.log 2> /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/xilinx-legacy-rewriter.HLSC_datapacking_64_bs.pp.0.cpp.err.log 
+Command           ap_eval done; 3.64 sec.
+Command         tidy_31 done; 12.77 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 22 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute         tidy_31 xilinx-ssdm-intrinsics-arguments /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 6.68 sec.
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Processing labels
+Execute         clang -src /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot" -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.bc" 
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.bc
+Command         clang done; 4.94 sec.
+INFO-FLOW: Linking Debug ...
+Execute         llvm-ld /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_datapacking_64_bs.g.bc -hls-opt -except-internalize test -L/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/lib -lhlsm -lhlsmc++ -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g 
+Command         llvm-ld done; 1.22 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1057.312 ; gain = 527.219 ; free physical = 110176 ; free virtual = 126025
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 1057.312 ; gain = 527.219 ; free physical = 110176 ; free virtual = 126026
+Execute         get_config_sdx -target 
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute           transform -promote-dbg-pointer /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.pp.bc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.pp.0.bc -f 
+Command           transform done; 0.15 sec.
+Execute           llvm-ld /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/lib -lfloatconversion -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g.0 
+Command           llvm-ld done; 1.23 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top test -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g.0.bc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command           transform done; 11.12 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 1121.312 ; gain = 591.219 ; free physical = 110087 ; free virtual = 125942
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g.1.bc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+Command           transform done; 0.99 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g.2.prechk.bc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] HLSC_datapacking_64_bs.cpp:60: variable-indexed range selection may cause suboptimal QoR.
+WARNING: [SYNCHK 200-77] The top function 'test' (HLSC_datapacking_64_bs.cpp:15) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops.
+INFO: [SYNCHK 200-10] 0 error(s), 2 warning(s).
+Command           transform done; 0.13 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:04 ; elapsed = 00:01:10 . Memory (MB): peak = 1122.590 ; gain = 592.496 ; free physical = 110074 ; free virtual = 125931
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.g.1.bc to /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.o.1.bc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x5' (HLSC_datapacking_64_bs.cpp:56) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'test_train_accu_x9' (HLSC_datapacking_64_bs.cpp:89) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x16' (HLSC_datapacking_64_bs.cpp:115) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x17' (HLSC_datapacking_64_bs.cpp:119) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x18' (HLSC_datapacking_64_bs.cpp:129) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x19' (HLSC_datapacking_64_bs.cpp:138) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'test_test_accu_x22' (HLSC_datapacking_64_bs.cpp:160) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x29' (HLSC_datapacking_64_bs.cpp:186) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x30' (HLSC_datapacking_64_bs.cpp:190) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x31' (HLSC_datapacking_64_bs.cpp:200) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x32' (HLSC_datapacking_64_bs.cpp:209) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x41' (HLSC_datapacking_64_bs.cpp:253) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x42' (HLSC_datapacking_64_bs.cpp:257) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x43' (HLSC_datapacking_64_bs.cpp:267) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred_x44' (HLSC_datapacking_64_bs.cpp:276) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'training_update_x45' (HLSC_datapacking_64_bs.cpp:310) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x52' (HLSC_datapacking_64_bs.cpp:336) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x53' (HLSC_datapacking_64_bs.cpp:340) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x54' (HLSC_datapacking_64_bs.cpp:350) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x55' (HLSC_datapacking_64_bs.cpp:359) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'testing_update_x58' (HLSC_datapacking_64_bs.cpp:381) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'count_x65' (HLSC_datapacking_64_bs.cpp:407) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'numb_x66' (HLSC_datapacking_64_bs.cpp:411) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'sum_x67' (HLSC_datapacking_64_bs.cpp:421) in function 'test' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pred1_x68' (HLSC_datapacking_64_bs.cpp:430) in function 'test' automatically.
+INFO: [HLS 200-489] Unrolling loop 'sum_x5' (HLSC_datapacking_64_bs.cpp:56) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'test_train_accu_x9' (HLSC_datapacking_64_bs.cpp:89) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x16' (HLSC_datapacking_64_bs.cpp:115) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x17' (HLSC_datapacking_64_bs.cpp:119) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x18' (HLSC_datapacking_64_bs.cpp:129) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x19' (HLSC_datapacking_64_bs.cpp:138) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'test_test_accu_x22' (HLSC_datapacking_64_bs.cpp:160) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x29' (HLSC_datapacking_64_bs.cpp:186) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x30' (HLSC_datapacking_64_bs.cpp:190) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x31' (HLSC_datapacking_64_bs.cpp:200) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x32' (HLSC_datapacking_64_bs.cpp:209) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x41' (HLSC_datapacking_64_bs.cpp:253) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x42' (HLSC_datapacking_64_bs.cpp:257) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x43' (HLSC_datapacking_64_bs.cpp:267) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred_x44' (HLSC_datapacking_64_bs.cpp:276) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'training_update_x45' (HLSC_datapacking_64_bs.cpp:310) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x52' (HLSC_datapacking_64_bs.cpp:336) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x53' (HLSC_datapacking_64_bs.cpp:340) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x54' (HLSC_datapacking_64_bs.cpp:350) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x55' (HLSC_datapacking_64_bs.cpp:359) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'testing_update_x58' (HLSC_datapacking_64_bs.cpp:381) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'count_x65' (HLSC_datapacking_64_bs.cpp:407) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'numb_x66' (HLSC_datapacking_64_bs.cpp:411) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'sum_x67' (HLSC_datapacking_64_bs.cpp:421) in function 'test' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pred1_x68' (HLSC_datapacking_64_bs.cpp:430) in function 'test' completely with a factor of 1.
+INFO: [XFORM 203-721] Changing loop 'match_x4' (HLSC_datapacking_64_bs.cpp:41)  to a process function for dataflow in function 'test'.
+INFO: [XFORM 203-721] Changing loop 'i2' (HLSC_datapacking_64_bs.cpp:52)  to a process function for dataflow in function 'test'.
+INFO: [XFORM 203-721] Extract dataflow region from loop learn_k (HLSC_datapacking_64_bs.cpp:32)  of function 'test'.
+WARNING: [XFORM 203-713] All the elements of global array 'compute2.V1' should be updated in process function 'match_x4_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'match2'  should be updated in process function 'match_x4_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'compute1.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'hcl_rdv3.V'  in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'hcl_rdv3.V' has read operations in process function 'i2_proc'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'prototype.V'  in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'prototype.V' has read and write operations in process function 'i2_proc'.
+WARNING: [XFORM 203-713] All the elements of global array 'prototype.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'prototypeCounter.V'  should be updated in process function 'i2_proc', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'dataflow_in_loop_learn_k', detected/extracted 2 process function(s): 
+	 'match_x4_proc'
+	 'i2_proc'.
+WARNING: [XFORM 203-124] Array  'match2' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+Command           transform done; 4.88 sec.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.o.1.tmp.bc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+Command           transform done; 1.98 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:11 ; elapsed = 00:01:17 . Memory (MB): peak = 1185.312 ; gain = 655.219 ; free physical = 110022 ; free virtual = 125883
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.o.2.bc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'dataflow_parent_loop_proc' to 'dataflow_parent_loop.1' (HLSC_datapacking_64_bs.cpp:32:40)
+WARNING: [XFORM 203-631] Renaming function 'dataflow_in_loop_learn_k' to 'dataflow_in_loop_lea' (HLSC_datapacking_64_bs.cpp:33:1)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:20:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_datapacking_64_bs.cpp:26:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1.V' (HLSC_datapacking_64_bs.cpp:110:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1.V' (HLSC_datapacking_64_bs.cpp:92:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1_.V' (HLSC_datapacking_64_bs.cpp:181:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1_.V' (HLSC_datapacking_64_bs.cpp:163:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance.V' (HLSC_datapacking_64_bs.cpp:234:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'pre_dist.V' (HLSC_datapacking_64_bs.cpp:238:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'hamming_dist.V' (HLSC_datapacking_64_bs.cpp:242:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance.V' (HLSC_datapacking_64_bs.cpp:248:65)
+INFO: [HLS 200-472] Inferring partial write operation for 'pre_dist.V' (HLSC_datapacking_64_bs.cpp:264:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'hamming_dist.V' (HLSC_datapacking_64_bs.cpp:273:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_datapacking_64_bs.cpp:285:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_datapacking_64_bs.cpp:286:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_datapacking_64_bs.cpp:289)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_datapacking_64_bs.cpp:290)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:293:90)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:296)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:300:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:303)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1__.V' (HLSC_datapacking_64_bs.cpp:331:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1__.V' (HLSC_datapacking_64_bs.cpp:313:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1___.V' (HLSC_datapacking_64_bs.cpp:402:70)
+INFO: [HLS 200-472] Inferring partial write operation for 'distance1___.V' (HLSC_datapacking_64_bs.cpp:384:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute2.V1' (HLSC_datapacking_64_bs.cpp:45:37)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_datapacking_64_bs.cpp:78:97)
+INFO: [HLS 200-472] Inferring partial write operation for 'compute1.V' (HLSC_datapacking_64_bs.cpp:69:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_datapacking_64_bs.cpp:66:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'result.V' (HLSC_datapacking_64_bs.cpp:62:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum1.V' (HLSC_datapacking_64_bs.cpp:73:149)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototype.V' (HLSC_datapacking_64_bs.cpp:82:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'prototypeCounter.V' (HLSC_datapacking_64_bs.cpp:83:229)
+Command           transform done; 3.04 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:14 ; elapsed = 00:01:20 . Memory (MB): peak = 1185.312 ; gain = 655.219 ; free physical = 109987 ; free virtual = 125850
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 23.61 sec.
+Command       elaborate done; 75.18 sec.
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'test' ...
+Execute         ap_set_top_model test 
+WARNING: [SYN 201-103] Legalizing function name 'dataflow_parent_loop.1' to 'dataflow_parent_loop_1'.
+Execute         get_model_list test -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model test 
+Execute         preproc_iomode -model dataflow_parent_loop.1 
+Execute         preproc_iomode -model dataflow_in_loop_lea 
+Execute         preproc_iomode -model i2_proc 
+Execute         preproc_iomode -model match_x4_proc 
+Execute         get_model_list test -filter all-wo-channel 
+INFO-FLOW: Model list for configure: match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test
+INFO-FLOW: Configuring Module : match_x4_proc ...
+Execute         set_default_model match_x4_proc 
+Execute         apply_spec_resource_limit match_x4_proc 
+INFO-FLOW: Configuring Module : i2_proc ...
+Execute         set_default_model i2_proc 
+Execute         apply_spec_resource_limit i2_proc 
+INFO-FLOW: Configuring Module : dataflow_in_loop_lea ...
+Execute         set_default_model dataflow_in_loop_lea 
+Execute         apply_spec_resource_limit dataflow_in_loop_lea 
+INFO-FLOW: Configuring Module : dataflow_parent_loop.1 ...
+Execute         set_default_model dataflow_parent_loop.1 
+Execute         apply_spec_resource_limit dataflow_parent_loop.1 
+INFO-FLOW: Configuring Module : test ...
+Execute         set_default_model test 
+Execute         apply_spec_resource_limit test 
+INFO-FLOW: Model list for preprocess: match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test
+INFO-FLOW: Preprocessing Module: match_x4_proc ...
+Execute         set_default_model match_x4_proc 
+Execute         cdfg_preprocess -model match_x4_proc 
+Execute         rtl_gen_preprocess match_x4_proc 
+INFO-FLOW: Preprocessing Module: i2_proc ...
+Execute         set_default_model i2_proc 
+Execute         cdfg_preprocess -model i2_proc 
+Execute         rtl_gen_preprocess i2_proc 
+INFO-FLOW: Preprocessing Module: dataflow_in_loop_lea ...
+Execute         set_default_model dataflow_in_loop_lea 
+Execute         cdfg_preprocess -model dataflow_in_loop_lea 
+Execute         rtl_gen_preprocess dataflow_in_loop_lea 
+INFO-FLOW: Preprocessing Module: dataflow_parent_loop.1 ...
+Execute         set_default_model dataflow_parent_loop.1 
+Execute         cdfg_preprocess -model dataflow_parent_loop.1 
+Execute         rtl_gen_preprocess dataflow_parent_loop.1 
+INFO-FLOW: Preprocessing Module: test ...
+Execute         set_default_model test 
+Execute         cdfg_preprocess -model test 
+Execute         rtl_gen_preprocess test 
+INFO-FLOW: Model list for synthesis: match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'match_x4_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model match_x4_proc 
+Execute         schedule -model match_x4_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 80.2 seconds; current allocated memory: 289.123 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.verbose.sched.rpt 
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling match_x4_proc.
+Execute         set_default_model match_x4_proc 
+Execute         bind -model match_x4_proc 
+BIND OPTION: model=match_x4_proc
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 289.346 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.verbose.bind.rpt 
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.bind.adb -f 
+INFO-FLOW: Finish binding match_x4_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'i2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model i2_proc 
+Execute         schedule -model i2_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 289.771 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.verbose.sched.rpt 
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling i2_proc.
+Execute         set_default_model i2_proc 
+Execute         bind -model i2_proc 
+BIND OPTION: model=i2_proc
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 290.285 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.verbose.bind.rpt 
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.bind.adb -f 
+INFO-FLOW: Finish binding i2_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_lea' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model dataflow_in_loop_lea 
+Execute         schedule -model dataflow_in_loop_lea 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 290.359 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.verbose.sched.rpt 
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.sched.adb -f 
+INFO-FLOW: Finish scheduling dataflow_in_loop_lea.
+Execute         set_default_model dataflow_in_loop_lea 
+Execute         bind -model dataflow_in_loop_lea 
+BIND OPTION: model=dataflow_in_loop_lea
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 290.498 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.verbose.bind.rpt 
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.bind.adb -f 
+INFO-FLOW: Finish binding dataflow_in_loop_lea.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model dataflow_parent_loop.1 
+Execute         schedule -model dataflow_parent_loop.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 290.586 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.verbose.sched.rpt 
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.sched.adb -f 
+INFO-FLOW: Finish scheduling dataflow_parent_loop.1.
+Execute         set_default_model dataflow_parent_loop.1 
+Execute         bind -model dataflow_parent_loop.1 
+BIND OPTION: model=dataflow_parent_loop.1
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 290.668 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.verbose.bind.rpt 
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.bind.adb -f 
+INFO-FLOW: Finish binding dataflow_parent_loop.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model test 
+Execute         schedule -model test 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.39 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 292.478 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.verbose.sched.rpt 
+Command         syn_report done; 0.28 sec.
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.sched.adb -f 
+Command         db_write done; 0.11 sec.
+INFO-FLOW: Finish scheduling test.
+Execute         set_default_model test 
+Execute         bind -model test 
+BIND OPTION: model=test
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.32 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.71 seconds; current allocated memory: 295.020 MB.
+Execute         syn_report -verbosereport -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.verbose.bind.rpt 
+Command         syn_report done; 0.67 sec.
+Execute         db_write -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.bind.adb -f 
+Command         db_write done; 0.11 sec.
+INFO-FLOW: Finish binding test.
+Execute         get_model_list test -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess match_x4_proc 
+Execute         rtl_gen_preprocess i2_proc 
+Execute         rtl_gen_preprocess dataflow_in_loop_lea 
+Execute         rtl_gen_preprocess dataflow_parent_loop.1 
+Execute         rtl_gen_preprocess test 
+INFO-FLOW: Model list for RTL generation: match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'match_x4_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model match_x4_proc -vendor xilinx -mg_file /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'match_x4_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.85 seconds; current allocated memory: 295.554 MB.
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         gen_rtl match_x4_proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/systemc/match_x4_proc -synmodules match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test 
+Execute         gen_rtl match_x4_proc -style xilinx -f -lang vhdl -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/vhdl/match_x4_proc 
+Execute         gen_rtl match_x4_proc -style xilinx -f -lang vlog -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/verilog/match_x4_proc 
+Execute         syn_report -csynth -model match_x4_proc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/match_x4_proc_csynth.rpt 
+Execute         syn_report -rtlxml -model match_x4_proc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/match_x4_proc_csynth.xml 
+Execute         syn_report -verbosereport -model match_x4_proc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.verbose.rpt 
+Execute         db_write -model match_x4_proc -f -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.adb 
+Execute         gen_tb_info match_x4_proc -p /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'i2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model i2_proc -vendor xilinx -mg_file /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_5ns_15ns_20_1_1' to 'test_mul_mul_5ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_5ns_15ns_18_1_1' to 'test_mul_mul_5ns_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_5ns_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_5ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'i2_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 297.070 MB.
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         gen_rtl i2_proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/systemc/i2_proc -synmodules match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test 
+Execute         gen_rtl i2_proc -style xilinx -f -lang vhdl -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/vhdl/i2_proc 
+Execute         gen_rtl i2_proc -style xilinx -f -lang vlog -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/verilog/i2_proc 
+Execute         syn_report -csynth -model i2_proc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/i2_proc_csynth.rpt 
+Execute         syn_report -rtlxml -model i2_proc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/i2_proc_csynth.xml 
+Execute         syn_report -verbosereport -model i2_proc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.verbose.rpt 
+Command         syn_report done; 0.12 sec.
+Execute         db_write -model i2_proc -f -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.adb 
+Execute         gen_tb_info i2_proc -p /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_lea' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model dataflow_in_loop_lea -vendor xilinx -mg_file /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'dataflow_in_loop_lea_compute2_V' to 'dataflow_in_loop_dEe' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL data type mismatch (logic vs. lv) for signal 'i2_proc_U0_prototype_V_we0'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_lea'.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 299.465 MB.
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         gen_rtl dataflow_in_loop_lea -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/systemc/dataflow_in_loop_lea -synmodules match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test 
+Execute         gen_rtl dataflow_in_loop_lea -style xilinx -f -lang vhdl -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/vhdl/dataflow_in_loop_lea 
+Execute         gen_rtl dataflow_in_loop_lea -style xilinx -f -lang vlog -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/verilog/dataflow_in_loop_lea 
+Execute         syn_report -csynth -model dataflow_in_loop_lea -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/dataflow_in_loop_lea_csynth.rpt 
+Execute         syn_report -rtlxml -model dataflow_in_loop_lea -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/dataflow_in_loop_lea_csynth.xml 
+Execute         syn_report -verbosereport -model dataflow_in_loop_lea -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.verbose.rpt 
+Execute         db_write -model dataflow_in_loop_lea -f -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.adb 
+Execute         gen_tb_info dataflow_in_loop_lea -p /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_parent_loop_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model dataflow_parent_loop.1 -vendor xilinx -mg_file /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 300.276 MB.
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         gen_rtl dataflow_parent_loop.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/systemc/dataflow_parent_loop_1 -synmodules match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test 
+Execute         gen_rtl dataflow_parent_loop.1 -style xilinx -f -lang vhdl -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/vhdl/dataflow_parent_loop_1 
+Execute         gen_rtl dataflow_parent_loop.1 -style xilinx -f -lang vlog -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/verilog/dataflow_parent_loop_1 
+Execute         syn_report -csynth -model dataflow_parent_loop.1 -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/dataflow_parent_loop_1_csynth.rpt 
+Execute         syn_report -rtlxml -model dataflow_parent_loop.1 -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/dataflow_parent_loop_1_csynth.xml 
+Execute         syn_report -verbosereport -model dataflow_parent_loop.1 -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.verbose.rpt 
+Command         syn_report done; 0.13 sec.
+Execute         db_write -model dataflow_parent_loop.1 -f -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.adb 
+Execute         gen_tb_info dataflow_parent_loop.1 -p /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model test -vendor xilinx -mg_file /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_rdv3_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_trainLabels_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_in_train_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_in_test_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_testLabels_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test/hcl_epoch_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'test' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'test_prototypeCounter_V' to 'test_prototypeCoueOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_srem_34s_15ns_19_38_seq_1' to 'test_srem_34s_15nfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mul_mul_9ns_13s_13_1_1' to 'test_mul_mul_9ns_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'test_mac_muladd_19s_15ns_19ns_19_1_1' to 'test_mac_muladd_1hbi' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'test/hcl_testLabels_V_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'test/hcl_testLabels_V_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'test_mac_muladd_1hbi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_9ns_g8j': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'test_srem_34s_15nfYi': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'test'.
+Command         create_rtl_model done; 0.4 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.63 seconds; current allocated memory: 304.520 MB.
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         gen_rtl test -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/systemc/test -synmodules match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test 
+Execute         gen_rtl test -istop -style xilinx -f -lang vhdl -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/vhdl/test 
+Command         gen_rtl done; 0.26 sec.
+Execute         gen_rtl test -istop -style xilinx -f -lang vlog -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/verilog/test 
+Command         gen_rtl done; 0.14 sec.
+Execute         syn_report -csynth -model test -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/test_csynth.rpt 
+Command         syn_report done; 0.14 sec.
+Execute         syn_report -rtlxml -model test -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/syn/report/test_csynth.xml 
+Command         syn_report done; 0.13 sec.
+Execute         syn_report -verbosereport -model test -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.verbose.rpt 
+Command         syn_report done; 0.81 sec.
+Execute         db_write -model test -f -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.adb 
+Command         db_write done; 0.33 sec.
+Execute         gen_tb_info test -p /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test 
+Execute         export_constraint_db -f -tool general -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.constraint.tcl 
+Execute         syn_report -designview -model test -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.design.xml 
+Command         syn_report done; 0.35 sec.
+Execute         get_config_rtl -disable_wave_debug 
+Execute         syn_report -wcfg -model test -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model test -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.protoinst 
+Execute         get_config_debug -directory 
+Execute         sc_get_clocks test 
+Execute         get_config_export -vivado_clock 
+Execute         sc_get_portdomain test 
+INFO-FLOW: Model list for RTL component generation: match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop.1 test
+INFO-FLOW: Handling components in module [match_x4_proc] ... 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [i2_proc] ... 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.compgen.tcl 
+INFO-FLOW: Found component test_mul_mul_5ns_bkb.
+INFO-FLOW: Append model test_mul_mul_5ns_bkb
+INFO-FLOW: Found component test_mul_mul_5ns_cud.
+INFO-FLOW: Append model test_mul_mul_5ns_cud
+INFO-FLOW: Found component i2_proc_result_V.
+INFO-FLOW: Append model i2_proc_result_V
+INFO-FLOW: Found component i2_proc_sum1_V.
+INFO-FLOW: Append model i2_proc_sum1_V
+INFO-FLOW: Handling components in module [dataflow_in_loop_lea] ... 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.compgen.tcl 
+INFO-FLOW: Found component fifo_w64_d6238_A.
+INFO-FLOW: Append model fifo_w64_d6238_A
+INFO-FLOW: Found component fifo_w5_d2_A.
+INFO-FLOW: Append model fifo_w5_d2_A
+INFO-FLOW: Handling components in module [dataflow_parent_loop_1] ... 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.compgen.tcl 
+INFO-FLOW: Handling components in module [test] ... 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.compgen.tcl 
+INFO-FLOW: Found component test_srem_34s_15nfYi.
+INFO-FLOW: Append model test_srem_34s_15nfYi
+INFO-FLOW: Found component test_mul_mul_9ns_g8j.
+INFO-FLOW: Append model test_mul_mul_9ns_g8j
+INFO-FLOW: Found component test_mac_muladd_1hbi.
+INFO-FLOW: Append model test_mac_muladd_1hbi
+INFO-FLOW: Found component test_prototype_V.
+INFO-FLOW: Append model test_prototype_V
+INFO-FLOW: Found component test_prototypeCoueOg.
+INFO-FLOW: Append model test_prototypeCoueOg
+INFO-FLOW: Found component test_compute1_V.
+INFO-FLOW: Append model test_compute1_V
+INFO-FLOW: Found component test_distance1_V.
+INFO-FLOW: Append model test_distance1_V
+INFO-FLOW: Found component test_pre_dist_V.
+INFO-FLOW: Append model test_pre_dist_V
+INFO-FLOW: Found component test_hamming_dist_V.
+INFO-FLOW: Append model test_hamming_dist_V
+INFO-FLOW: Append model match_x4_proc
+INFO-FLOW: Append model i2_proc
+INFO-FLOW: Append model dataflow_in_loop_lea
+INFO-FLOW: Append model dataflow_parent_loop_1
+INFO-FLOW: Append model test
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: test_mul_mul_5ns_bkb test_mul_mul_5ns_cud i2_proc_result_V i2_proc_sum1_V fifo_w64_d6238_A fifo_w5_d2_A test_srem_34s_15nfYi test_mul_mul_9ns_g8j test_mac_muladd_1hbi test_prototype_V test_prototypeCoueOg test_compute1_V test_distance1_V test_pre_dist_V test_hamming_dist_V match_x4_proc i2_proc dataflow_in_loop_lea dataflow_parent_loop_1 test
+INFO-FLOW: To file: write model test_mul_mul_5ns_bkb
+INFO-FLOW: To file: write model test_mul_mul_5ns_cud
+INFO-FLOW: To file: write model i2_proc_result_V
+INFO-FLOW: To file: write model i2_proc_sum1_V
+INFO-FLOW: To file: write model fifo_w64_d6238_A
+INFO-FLOW: To file: write model fifo_w5_d2_A
+INFO-FLOW: To file: write model test_srem_34s_15nfYi
+INFO-FLOW: To file: write model test_mul_mul_9ns_g8j
+INFO-FLOW: To file: write model test_mac_muladd_1hbi
+INFO-FLOW: To file: write model test_prototype_V
+INFO-FLOW: To file: write model test_prototypeCoueOg
+INFO-FLOW: To file: write model test_compute1_V
+INFO-FLOW: To file: write model test_distance1_V
+INFO-FLOW: To file: write model test_pre_dist_V
+INFO-FLOW: To file: write model test_hamming_dist_V
+INFO-FLOW: To file: write model match_x4_proc
+INFO-FLOW: To file: write model i2_proc
+INFO-FLOW: To file: write model dataflow_in_loop_lea
+INFO-FLOW: To file: write model dataflow_parent_loop_1
+INFO-FLOW: To file: write model test
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute         syn_report -model test -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 116.29 MHz
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source done; 0.12 sec.
+Command         ap_source done; 0.12 sec.
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.compgen.tcl 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'i2_proc_result_V_ram (RAM)' using block RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'i2_proc_sum1_V_ram (RAM)' using distributed RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Command         ap_source done; 0.18 sec.
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.compgen.tcl 
+Execute           send_msg_by_id INFO @200-741@%s dataflow_in_loop_dEe_memcore 
+INFO: [HLS 200-741] Implementing PIPO dataflow_in_loop_dEe_memcore using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'dataflow_in_loop_dEe_memcore_ram (RAM)' using distributed RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'match2_channel_U(fifo_w64_d6238_A)' using Block RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'p_0510_0_c_U(fifo_w5_d2_A)' using Shift Registers.
+Command         ap_source done; 0.13 sec.
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.compgen.tcl 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'test_srem_34s_15nfYi_div'
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info 
+INFO: [RTMG 210-278] Implementing memory 'test_prototype_V_ram (RAM)' using block RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'test_prototypeCoueOg_ram (RAM)' using block RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'test_compute1_V_ram (RAM)' using distributed RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'test_distance1_V_ram (RAM)' using block RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'test_pre_dist_V_ram (RAM)' using block RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'test_hamming_dist_V_ram (RAM)' using distributed RAMs.
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Command         ap_source done; 0.41 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source done; 0.15 sec.
+Command         ap_source done; 0.15 sec.
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=test xml_exists=0
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.compgen.tcl 
+Execute           send_msg_by_id INFO @200-741@%s dataflow_in_loop_dEe_memcore 
+INFO: [HLS 200-741] Implementing PIPO dataflow_in_loop_dEe_memcore using a single memory for all blocks
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.compgen.tcl 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute           source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute           source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute           source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Command         ap_source done; 0.19 sec.
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.compgen.tcl 
+Execute           send_msg_by_id INFO @200-741@%s dataflow_in_loop_dEe_memcore 
+INFO: [HLS 200-741] Implementing PIPO dataflow_in_loop_dEe_memcore using a single memory for all blocks
+Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.compgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.constraint.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=12
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=6
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=20 #gSsdmPorts=12
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         get_config_export -xo 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         get_config_sdx -target 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.rtl_wrap.cfg.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.compgen.dataonly.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.constraint.tcl 
+Execute         sc_get_clocks test 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/global.setting.tcl 
+Execute         get_config_debug -directory 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/match_x4_proc.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/i2_proc.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_in_loop_lea.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/dataflow_parent_loop_1.tbgen.tcl 
+Execute         source /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/test.tbgen.tcl 
+Execute         get_config_sdx -target 
+Execute         get_config_sdx -profile 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -stall_sig_gen 
+Execute         get_config_rtl -profile 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:19 ; elapsed = 00:01:32 . Memory (MB): peak = 1185.320 ; gain = 655.227 ; free physical = 109939 ; free virtual = 125815
+INFO: [VHDL 208-304] Generating VHDL RTL for test.
+INFO: [VLOG 209-307] Generating Verilog RTL for test.
+Command       autosyn done; 11.79 sec.
+Command     csynth_design done; 86.98 sec.
+Execute     cleanup_all 

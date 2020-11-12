@@ -1,0 +1,210 @@
+
+
+================================================================
+== Vivado HLS Report for 'match_x4_proc'
+================================================================
+* Date:           Wed Nov 11 09:19:15 2020
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        out.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 6.888 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
+    |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  2931861|  4878117| 29.319 ms | 48.781 ms |  2931861|  4878117|   none  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+-----------+-----------+-----------+------+----------+
+        |             |  Latency (cycles) | Iteration |  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency  |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+-----------+-----------+-----------+------+----------+
+        |- match_x4   |  2931860|  4878116| 470 ~ 782 |          -|          -|  6238|    no    |
+        | + match_y2  |      468|      780|   3 ~ 5   |          -|          -|   156|    no    |
+        +-------------+---------+---------+-----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 2 
+4 --> 5 7 
+5 --> 6 
+6 --> 7 
+7 --> 3 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.63>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecInterface(i64* %match2, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str144, i32 0, i32 0, [1 x i8]* @p_str145, [1 x i8]* @p_str146, [1 x i8]* @p_str147, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str148, [1 x i8]* @p_str149)"   --->   Operation 8 'specinterface' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%empty_87 = call i32 (...)* @_ssdm_op_SpecInterface(i5* %p_0510_0_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str118, i32 0, i32 0, [1 x i8]* @p_str119, [1 x i8]* @p_str120, [1 x i8]* @p_str121, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str122, [11 x i8]* @ScalarProp_str)"   --->   Operation 9 'specinterface' 'empty_87' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_0510_0_read = call i5 @_ssdm_op_Read.ap_auto.i5(i5 %p_0510_0)" [HLSC_datapacking_64_bs.cpp:33]   --->   Operation 10 'read' 'p_0510_0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.i5P(i5* %p_0510_0_out, i5 %p_0510_0_read)" [HLSC_datapacking_64_bs.cpp:33]   --->   Operation 11 'write' <Predicate = true> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 0> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%zext_ln544 = zext i5 %p_0510_0_read to i64" [HLSC_datapacking_64_bs.cpp:45->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 12 'zext' 'zext_ln544' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%compute2_V1_addr = getelementptr [26 x i1]* %compute2_V1, i64 0, i64 %zext_ln544" [HLSC_datapacking_64_bs.cpp:45->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 13 'getelementptr' 'compute2_V1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%zext_ln32 = zext i5 %p_0510_0_read to i32" [HLSC_datapacking_64_bs.cpp:32->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 14 'zext' 'zext_ln32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.76ns)   --->   "br label %0"   --->   Operation 15 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.19>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%p_0465_0_i_i = phi i13 [ 0, %entry ], [ %x4_V, %match_x4_end ]"   --->   Operation 16 'phi' 'p_0465_0_i_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%phi_mul = phi i20 [ 0, %entry ], [ %add_ln887, %match_x4_end ]" [HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 17 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (2.19ns)   --->   "%add_ln887 = add i20 %phi_mul, 156" [HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 18 'add' 'add_ln887' <Predicate = true> <Delay = 2.19> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.19> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (2.09ns)   --->   "%icmp_ln887 = icmp eq i13 %p_0465_0_i_i, -1954" [HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 19 'icmp' 'icmp_ln887' <Predicate = true> <Delay = 2.09> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%empty_88 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6238, i64 6238, i64 6238)"   --->   Operation 20 'speclooptripcount' 'empty_88' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (1.67ns)   --->   "%x4_V = add i13 %p_0465_0_i_i, 1" [HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 21 'add' 'x4_V' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.19> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887, label %.exit, label %match_x4_begin" [HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 22 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str7) nounwind" [HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 23 'specloopname' <Predicate = (!icmp_ln887)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_4_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str7)" [HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 24 'specregionbegin' 'tmp_4_i_i' <Predicate = (!icmp_ln887)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln544_21 = zext i13 %p_0465_0_i_i to i64" [HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 25 'zext' 'zext_ln544_21' <Predicate = (!icmp_ln887)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%hcl_trainLabels_V_ad = getelementptr [6238 x i32]* %hcl_trainLabels_V, i64 0, i64 %zext_ln544_21" [HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 26 'getelementptr' 'hcl_trainLabels_V_ad' <Predicate = (!icmp_ln887)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (1.76ns)   --->   "br label %1" [HLSC_datapacking_64_bs.cpp:42->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 27 'br' <Predicate = (!icmp_ln887)> <Delay = 1.76>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "ret void" [HLSC_datapacking_64_bs.cpp:33]   --->   Operation 28 'ret' <Predicate = (icmp_ln887)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.25>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%p_0618_0_i_i = phi i8 [ 0, %match_x4_begin ], [ %y2_V, %2 ]"   --->   Operation 29 'phi' 'p_0618_0_i_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (1.55ns)   --->   "%icmp_ln887_28 = icmp eq i8 %p_0618_0_i_i, -100" [HLSC_datapacking_64_bs.cpp:42->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 30 'icmp' 'icmp_ln887_28' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%empty_90 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 156, i64 156, i64 156)"   --->   Operation 31 'speclooptripcount' 'empty_90' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (1.91ns)   --->   "%y2_V = add i8 %p_0618_0_i_i, 1" [HLSC_datapacking_64_bs.cpp:42->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 32 'add' 'y2_V' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.19> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "br i1 %icmp_ln887_28, label %match_x4_end, label %4" [HLSC_datapacking_64_bs.cpp:42->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 33 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [2/2] (3.25ns)   --->   "%hcl_trainLabels_V_lo = load i32* %hcl_trainLabels_V_ad, align 4" [HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 34 'load' 'hcl_trainLabels_V_lo' <Predicate = (!icmp_ln887_28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 26> <RAM>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln321 = zext i8 %p_0618_0_i_i to i20" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 35 'zext' 'zext_ln321' <Predicate = (!icmp_ln887_28)> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (2.19ns)   --->   "%add_ln321 = add i20 %phi_mul, %zext_ln321" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 36 'add' 'add_ln321' <Predicate = (!icmp_ln887_28)> <Delay = 2.19> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.19> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%empty_89 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str7, i32 %tmp_4_i_i)" [HLSC_datapacking_64_bs.cpp:51->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 37 'specregionend' 'empty_89' <Predicate = (icmp_ln887_28)> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "br label %0" [HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 38 'br' <Predicate = (icmp_ln887_28)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 5.72>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str8) nounwind" [HLSC_datapacking_64_bs.cpp:42->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 39 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 40 [1/2] (3.25ns)   --->   "%hcl_trainLabels_V_lo = load i32* %hcl_trainLabels_V_ad, align 4" [HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 40 'load' 'hcl_trainLabels_V_lo' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 26> <RAM>
+ST_4 : Operation 41 [1/1] (2.47ns)   --->   "%icmp_ln879 = icmp eq i32 %hcl_trainLabels_V_lo, %zext_ln32" [HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 41 'icmp' 'icmp_ln879' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%zext_ln321_2 = zext i20 %add_ln321 to i64" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 42 'zext' 'zext_ln321_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%hcl_in_train_V_addr = getelementptr [973128 x i64]* %hcl_in_train_V, i64 0, i64 %zext_ln321_2" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 43 'getelementptr' 'hcl_in_train_V_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "br i1 %icmp_ln879, label %3, label %5" [HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 44 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* %match2, i64 0)" [HLSC_datapacking_64_bs.cpp:47->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 45 'write' <Predicate = (!icmp_ln879)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 0> <FIFO>
+ST_4 : Operation 46 [1/1] (1.76ns)   --->   "br label %2"   --->   Operation 46 'br' <Predicate = (!icmp_ln879)> <Delay = 1.76>
+ST_4 : Operation 47 [4/4] (3.25ns)   --->   "%hcl_in_train_V_load = load i64* %hcl_in_train_V_addr, align 8" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 47 'load' 'hcl_in_train_V_load' <Predicate = (icmp_ln879)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 26> <RAM>
+
+State 5 <SV = 4> <Delay = 3.25>
+ST_5 : Operation 48 [3/4] (3.25ns)   --->   "%hcl_in_train_V_load = load i64* %hcl_in_train_V_addr, align 8" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 48 'load' 'hcl_in_train_V_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 26> <RAM>
+
+State 6 <SV = 5> <Delay = 3.25>
+ST_6 : Operation 49 [2/4] (3.25ns)   --->   "%hcl_in_train_V_load = load i64* %hcl_in_train_V_addr, align 8" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 49 'load' 'hcl_in_train_V_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 26> <RAM>
+
+State 7 <SV = 6> <Delay = 6.88>
+ST_7 : Operation 50 [1/4] (3.25ns)   --->   "%hcl_in_train_V_load = load i64* %hcl_in_train_V_addr, align 8" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 50 'load' 'hcl_in_train_V_load' <Predicate = (icmp_ln879)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 26> <RAM>
+ST_7 : Operation 51 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* %match2, i64 %hcl_in_train_V_load)" [HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 51 'write' <Predicate = (icmp_ln879)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 0> <FIFO>
+ST_7 : Operation 52 [1/1] (1.76ns)   --->   "br label %2" [HLSC_datapacking_64_bs.cpp:46->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 52 'br' <Predicate = (icmp_ln879)> <Delay = 1.76>
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "%storemerge_i_i = phi i1 [ false, %5 ], [ true, %3 ]"   --->   Operation 53 'phi' 'storemerge_i_i' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 54 [1/1] (2.32ns)   --->   "store i1 %storemerge_i_i, i1* %compute2_V1_addr, align 1" [HLSC_datapacking_64_bs.cpp:45->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 54 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 26> <RAM>
+ST_7 : Operation 55 [1/1] (0.00ns)   --->   "br label %1" [HLSC_datapacking_64_bs.cpp:42->HLSC_datapacking_64_bs.cpp:33]   --->   Operation 55 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.63ns
+The critical path consists of the following:
+	wire read on port 'p_0510_0' (HLSC_datapacking_64_bs.cpp:33) [9]  (0 ns)
+	fifo write on port 'p_0510_0_out' (HLSC_datapacking_64_bs.cpp:33) [10]  (3.63 ns)
+
+ <State 2>: 2.2ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul', HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33) with incoming values : ('add_ln887', HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33) [17]  (0 ns)
+	'add' operation ('add_ln887', HLSC_datapacking_64_bs.cpp:41->HLSC_datapacking_64_bs.cpp:33) [18]  (2.2 ns)
+
+ <State 3>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('hcl_trainLabels_V_lo', HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33) on array 'hcl_trainLabels_V' [37]  (3.25 ns)
+
+ <State 4>: 5.73ns
+The critical path consists of the following:
+	'load' operation ('hcl_trainLabels_V_lo', HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33) on array 'hcl_trainLabels_V' [37]  (3.25 ns)
+	'icmp' operation ('icmp_ln879', HLSC_datapacking_64_bs.cpp:43->HLSC_datapacking_64_bs.cpp:33) [38]  (2.47 ns)
+
+ <State 5>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('hcl_in_train_V_load', HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33) on array 'hcl_in_train_V' [48]  (3.25 ns)
+
+ <State 6>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('hcl_in_train_V_load', HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33) on array 'hcl_in_train_V' [48]  (3.25 ns)
+
+ <State 7>: 6.89ns
+The critical path consists of the following:
+	'load' operation ('hcl_in_train_V_load', HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33) on array 'hcl_in_train_V' [48]  (3.25 ns)
+	fifo write on port 'match2' (HLSC_datapacking_64_bs.cpp:44->HLSC_datapacking_64_bs.cpp:33) [49]  (3.63 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

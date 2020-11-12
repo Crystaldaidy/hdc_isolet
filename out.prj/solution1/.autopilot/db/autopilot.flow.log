@@ -1,0 +1,190 @@
+INFO-FLOW: Workspace /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1 opened at Wed Nov 11 23:41:13 EST 2020
+Command     open_solution done; 0.47 sec.
+Execute     set_part xc7z020clg484-1 
+Execute       ap_part_info -name xc7z020clg484-1 -data single -quiet 
+Command       ap_part_info done; 5.51 sec.
+Execute       ap_part_info -name xc7z020clg484-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg484:-1 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source done; 0.12 sec.
+Command         ap_source done; 0.12 sec.
+Execute         ap_part_info -data single -name xc7z020-clg484-1 
+Execute         ap_part_info -name xc7z020-clg484-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Command       add_library done; 0.22 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute             source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 5.85 sec.
+Execute     create_clock -period 10 
+Execute       config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     csynth_design 
+Execute       get_config_compile -dump_cfg 
+Execute       get_config_compile -effort 
+Execute       get_config_compile -enable_clang39 
+Execute       get_config_compile -g 
+Execute       get_config_compile -ng 
+Execute       get_config_compile -opt_fp 
+Execute       get_config_compile -skip_cdt 
+Execute       get_config_compile -skip_syncheck 
+Execute       get_config_compile -skip_transform 
+Execute       get_config_compile -keep_printf 
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute         get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute         get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'HLSC_DDY.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute         is_m_axi_addr64 
+INFO-FLOW: Handling HLSC_DDY.cpp as C++
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         is_encrypted HLSC_DDY.cpp 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute         clang  -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "HLSC_DDY.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot" -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_DDY.pp.0.cpp" 
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E HLSC_DDY.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_DDY.pp.0.cpp
+Command         clang done; 2.59 sec.
+Execute         tidy_31 xilinx-xfmat-array-geometry /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_DDY.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_DDY.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 5.56 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute         clang -syntaxcheck -src /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_DDY.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot" -I "/opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_DDY.pp.0.cpp"  -o "/work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot -I /opt/xilinx/Xilinx_Vivado_vitis_2019.2/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/HLSC_DDY.pp.0.cpp -o /work/shared/users/ugrad/dnd29/hdc_DDY/hdc_isolet/out.prj/solution1/.autopilot/db/useless.bc
+ERROR: [HLS 200-70] Compilation errors found: In file included from HLSC_DDY.cpp:1:
+HLSC_DDY.cpp:282:11: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
+          ^~~~~~~~
+          compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:282:45: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[hcl_trainLabels[i10]] = (compute1[hcl_trainLabels[i10]] + 1);
+                                            ^~~~~~~~
+                                            compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:283:11: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[pred] = (compute1[pred] + -1);
+          ^~~~~~~~
+          compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:283:29: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+          compute1[pred] = (compute1[pred] + -1);
+                            ^~~~~~~~
+                            compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:288:20: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+              if ((compute1[hcl_trainLabels[i10]] % 2) == 0) {
+                   ^~~~~~~~
+                   compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:289:303: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute1[hcl_trainLabels[i10]] / 2))) {
+                                                                                                                                                                                                                                                                                                              ^~~~~~~~
+                                                                                                                                                                                                                                                                                                              compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:293:361: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                prototype[hcl_trainLabels[i10]][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(hcl_trainLabels[i10] * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute1[hcl_trainLabels[i10]] / 2)))) ? ((bit32)1) : ((bit32)0));
+                                                                                                                                                                                                                                                                                                                                                                        ^~~~~~~~
+                                                                                                                                                                                                                                                                                                                                                                        compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:295:20: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+              if ((compute1[pred] % 2) == 0) {
+                   ^~~~~~~~
+                   compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:296:271: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                if (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) == ((ap_int<33>)(compute1[pred] / 2))) {
+                                                                                                                                                                                                                                                                              ^~~~~~~~
+                                                                                                                                                                                                                                                                              compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+HLSC_DDY.cpp:300:313: error: use of undeclared identifier 'compute1'; did you mean 'compute0'?
+                prototype[pred][i13][i14] = (((ap_int<33>)0 < (((ap_int<33>)prototypeCounter[(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) / (ap_int<33>)9984)][(((((ap_int<33>)(i13 * 64)) + ((ap_int<33>)i14)) + ((ap_int<33>)(pred * 9984))) % (ap_int<33>)9984)]) - ((ap_int<33>)(compute1[pred] / 2)))) ? ((bit32)1) : ((bit32)0));
+                                                                                                                                                                                                                                                                                                                        ^~~~~~~~
+                                                                                                                                                                                                                                                                                                                        compute0
+HLSC_DDY.cpp:31:11: note: 'compute0' declared here
+    bit32 compute0[26];
+          ^
+10 errors generated.
+Command         clang done; error code: 2; 4.8 sec.
+Command       elaborate done; error code: 2; 13 sec.
+Command     csynth_design done; error code: 2; 13.01 sec.
+Command   ap_source done; error code: 1; 19.47 sec.
+Execute   cleanup_all 
